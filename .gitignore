@@ -1,0 +1,7 @@
+.DS_STORE
+node_modules
+.flowconfig
+remote-repo/
+.module-cache
+.idea
+.vscode
