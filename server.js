@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+const db = require("./models");
 
 
 // Define middleware here
@@ -13,7 +14,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3logindb", 
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,6 +28,34 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows",
 
 // Send every other request to the React app
 // Define any API routes before this runs
+
+app.get("/", (req, res) => {
+  res.send("Hello world!");
+});
+app.post("/login", (req, res) => {
+  // console.log(req.body)
+  db.User.findOne({email: req.body.email})
+  // db.User.find()
+  // db.User.create(req.body)
+  .then(dbUser => {
+    if (req.body.password === dbUser.password) {
+      res.send("Password Correct");
+
+    }else{
+      res.send("Incorrect Password");
+    }
+    // console.log(dbUser);
+    // res.json(dbUser);
+
+  })
+  .catch(err => {
+    res.json(err);
+  });
+  // res.send("Login!");
+
+});
+
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
