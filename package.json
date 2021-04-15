@@ -15,16 +15,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.0",
-    "autoprefixer": "^9.8.6",
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
+    "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "@craco/craco": "^6.1.1",
-    "@tailwindcss/forms": "^0.3.2",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.12.3"
