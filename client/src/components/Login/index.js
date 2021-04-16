@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-export default class index extends Component {
+export default class Login extends Component {
     state = {
         //create the state variable to email and password
         //create a handleinput cahnge methods so that it will update the state
