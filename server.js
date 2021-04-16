@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
 });
 app.post("/login", (req, res) => {
   // console.log(req.body)
-  // db.User.findOne({email: req.body.email})
-  db.User.find()
+  db.User.findOne({email: req.body.email})
+  // db.User.find()
   // db.User.create(req.body)
   .then(dbUser => {
     if (req.body.password === dbUser.password) {
