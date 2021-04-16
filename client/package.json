@@ -6,9 +6,9 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "@craco/craco": "^6.1.1",
+    "@tailwindcss/forms": "^0.3.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-dom": "^16.13.1"
   },
   "scripts": {
     "start": "craco start",
