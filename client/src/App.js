@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/Navbar/index"
-import AboutUs from "./components/AboutUs/index"
-
+import RegisterLogin from "./pages/RegisterLogin"
+import Form from "./pages/Form";
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <AboutUs />
+    <div className="App">
+      <Form />
+      {/* <RegisterLogin /> */}
+      {/* <div className="App">
+      {/*    <RegisterLogin /> */}
+      {/*    <Route exact path={["/", "/about"]} component={About} /> */}
+      {/* <Route exact path="/Register" component={RegisterLogin} />
+      <Route exact path="/cont" component={Form} /> */}
     </div>
+    // </div>
   );
 }
 

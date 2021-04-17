@@ -1,2 +1,8 @@
-node_modules
 .DS_Store
+/node_modules
+.flowconfig
+remote-repo/
+.module-cache
+.idea
+.vscode
+.env
