@@ -9,13 +9,13 @@
     "@tailwindcss/forms": "^0.3.2",
     "axios": "^0.21.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
+    "react-dom": "^16.13.1",
+    "react-scripts": "^4.0.3"
+  }, 
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "test": "craco test"
   },
   "browserslist": {
     "production": [
