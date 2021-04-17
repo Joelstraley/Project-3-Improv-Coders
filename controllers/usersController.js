@@ -9,10 +9,30 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
-      db.User
-        .findById(req.params.id)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+      console.log("hello");
+      // db.User
+      //   .findById(req.params.id)
+      //   .then(dbModel => res.json(dbModel))
+      //   .catch(err => res.status(422).json(err));
+    },
+    // thie purpose of this function will log a person in
+    login: function(req, res) {
+      db.User.findOne({email: req.body.email})
+        .then(dbUser => {
+          if (req.body.password === dbUser.password) {
+            res.status(200).send("Password Correct");
+
+          }else{
+            res.status(401).send("Incorrect Password");
+          }
+
+        })
+        .catch(err => {
+          res.status(422).json(err);
+        });
+
+
+      
     },
     create: function(req, res) {
       db.User

@@ -10,14 +10,14 @@ export default {
       return axios.get(`${BASEURL}/`);
     },
     postLoginRequest: function(loginRequest) {
-      return axios.post(`${BASEURL}/login`, {
+      return axios.post(`${BASEURL}/api/users/login`, {
         //   this become req.body in the server.js post request
         email: loginRequest.email,
         password: loginRequest.password
       });
     },
-    getBaseBreedsList: function() {
-      return axios.get("https://dog.ceo/api/breeds/list");
-    }
+    // getBaseBreedsList: function() {
+    //   return axios.get("https://dog.ceo/api/breeds/list");
+    // }
   };
   
