@@ -43,10 +43,6 @@ export default class Login extends Component {
             <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form>
-                {/* <label>
-                <p>Name</p>
-                <input type="text" />
-                </label> */}
                 <label>
                 <p>Email</p>
                 <input
