@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import API from "../../utils/API.js";
 
 
 export default class Login extends Component {
@@ -31,17 +32,17 @@ export default class Login extends Component {
         //   email: "",
         //   password: ""
         // });
-      };
+        API.postLoginRequest(this.state)
+        .then(res => {
+            console.log(res);
+        });
+    };
 
     render() {
         return (
             <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form>
-                {/* <label>
-                <p>Name</p>
-                <input type="text" />
-                </label> */}
                 <label>
                 <p>Email</p>
                 <input
