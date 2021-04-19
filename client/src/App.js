@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Register from "./pages/Register"
 import LoginPage from "./pages/LoginPage"
+import HomePage from "./pages/Event-Page"
 // import Form from "./pages/Form";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Switch>
       {/* <Form /> */}
+      <Route exact path="/" component={HomePage} /> 
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
       {/* <Route exact path="/cont" component={Form} /> */}  
