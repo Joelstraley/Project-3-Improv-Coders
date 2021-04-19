@@ -15,6 +15,8 @@ function App() {
       <Route exact path="/" component={HomePage} /> 
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
+      {/* in case there is a route that is not clearly defined, this route will direct the user back to  the home page */}
+      <Route path="*" component={HomePage} />
       {/* <Route exact path="/cont" component={Form} /> */}  
 
       {/* <div className="App">
