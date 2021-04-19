@@ -7,8 +7,8 @@ import Form from "./pages/Form";
 function App() {
   return (
     <div className="App">
-      <Form />
-      {/* <RegisterLogin /> */}
+      {/* <Form /> */}
+      <RegisterLogin />
       {/* <div className="App">
       {/*    <RegisterLogin /> */}
       {/*    <Route exact path={["/", "/about"]} component={About} /> */}

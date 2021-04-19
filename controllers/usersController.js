@@ -16,7 +16,9 @@ module.exports = {
       //   .catch(err => res.status(422).json(err));
     },
     // thie purpose of this function will log a person in
-    login: function(req, res) {
+    login: function(req, res){
+      console.log(req.body.email)
+      console.log(db.User)
       db.User.findOne({email: req.body.email})
         .then(dbUser => {
           if (req.body.password === dbUser.password) {
@@ -34,7 +36,10 @@ module.exports = {
 
       
     },
-    create: function(req, res) {
+
+    signup: function(req, res) {
+      console.log("===========================")
+      console.log(req.body)
       db.User
         .create(req.body)
         .then(dbModel => res.json(dbModel))

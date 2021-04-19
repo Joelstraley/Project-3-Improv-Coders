@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-/* mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3logindb",  */
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3logindb",
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
