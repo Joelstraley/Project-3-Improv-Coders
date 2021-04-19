@@ -18,13 +18,19 @@ module.exports = {
     // thie purpose of this function will log a person in
     login: function(req, res){
       console.log(req.body.email)
-      console.log(db.User)
       db.User.findOne({email: req.body.email})
-        .then(dbUser => {
-          if (req.body.password === dbUser.password) {
+        .then(async dbUser => {
+          console.log(dbUser.password)
+          console.log(req.body.password)
+          var confirm= await dbUser.validatePassword(req.body.password)
+          console.log("++++++++++++++++++")
+          console.log(confirm)
+          if (confirm) {
+            console.log("Correct Password!")
             res.status(200).send("Password Correct");
 
           }else{
+            console.log("Incorrect Password")
             res.status(401).send("Incorrect Password");
           }
 
