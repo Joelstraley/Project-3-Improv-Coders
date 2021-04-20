@@ -27,7 +27,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows",
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
-});
+})
+      .then(() => console.log('Connected Successfully'))
+      .catch((err) => console.error('Not Connected'));
+
+
+
+
 
 
 // Define API routes here

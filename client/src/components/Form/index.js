@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-// import "./style.css";
+import axios from 'axios';
+import "./style.css";
 
+/* const api = axios.create({
+  baseURL: 'http://localhost:3001/api/shows'
+})
+ */
 export default class FormComponent extends Component { 
   // Setting the component's initial state
   state = {
@@ -13,7 +18,9 @@ export default class FormComponent extends Component {
     endTime: "",
     description: "",
     eventLink: "",
-    eventImage: ""
+    eventImage: "",
+    cost: ""
+  
   };
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -24,10 +31,19 @@ export default class FormComponent extends Component {
       [name]: value
     });
   };
+
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     console.log(this.state)
+    axios.post('/api/shows', { 
+    }).then(res => {
+      console.log("this is the post data", res.data)
+    }).catch(function (error) {
+      console.log(error);
+    });
+
+
 /*      ((Send axios to backend with User Input object
         - post to backend API))
     this.setState({
@@ -35,6 +51,8 @@ export default class FormComponent extends Component {
       lastName: "",
       password: ""
     }); */
+
+
   };
 render(){
   return (
@@ -48,7 +66,7 @@ render(){
             value={this.state.eventName} required></input>
         </div>
         <div>
-            <label for="eventType">Event Type <span className="text-sm text-gray-600">(pick one)</span></label>
+            <label for="eventType">Event Type<br></br> <span className="text-sm text-gray-600" id="imageSpan">(pick one)</span></label>
             <select className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
             id="eventType" name="eventType" size="5"
             onChange={this.handleInputChange}
@@ -76,17 +94,17 @@ render(){
         <div>
           <label for="date">Date of Show</label>
           <input 
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          className="border border-gray-400 block py-2 px-4 w-half rounded focus:outline-none focus:border-teal-500"
             type="date" id="date" name="date"
             value="2021-05-01"
             min="2021-04-01" max="2030-12-31" required
             onChange={this.handleInputChange}
             value={this.state.date}></input>
       </div>
-      <div>
+      <div className="align-items: center;">
           <label for="startTime">Start Time</label>
           <input  
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          className="border border-gray-400 block py-2 px-4 w-half items-center rounded focus:outline-none focus:border-teal-500"
              type="time" 
              id="startTime" 
              name="startTime"
@@ -97,7 +115,7 @@ render(){
       <div>
           <label for="endTime">End Time</label>
           <input 
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          className="border border-gray-400 block py-2 px-4 w-half center rounded focus:outline-none focus:border-teal-500"
             type="time" 
              id="endTime" 
              name="endTime"
@@ -116,7 +134,7 @@ render(){
           value={this.state.description}></input>
       </div>
       <div>
-          <label for="eventLink">Add Event Link:</label>
+          <label for="eventLink">Event Link</label>
           <input 
           className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
           type="url" 
@@ -126,7 +144,7 @@ render(){
           value={this.state.eventLink}></input>
       </div>
       <div>
-          <label for="eventImage">Add Event Image:<span id="imageSpan" 
+          <label for="eventImage">Event Image <br></br> <span id="imageSpan" 
           className="text-sm text-gray-600">
             if you need to upload an image use <a href="https://imgbb.com/">imgbb.com</a></span></label>
           <input 
@@ -138,9 +156,23 @@ render(){
           value={this.state.eventImage}></input>
       </div>
       <div>
+          <label for="cost" className="py-1">Cost <br></br>  <span id="imageSpan" 
+          className="text-sm text-gray-600">
+            put 0 if show is Free </span></label>
+          <input 
+          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          type="number" 
+          id="cost" 
+          name="cost"
+          min="0"
+          placeholder="$"
+          onChange={this.handleInputChange}
+          value={this.state.cost}></input>
+      </div>
+      <div>
         <label for="submit"></label>
         <button 
-        className='text-3xl font-semibold' 
+        className='text-3xl font-semibold drop-shadow-md' 
         onClick={this.handleFormSubmit}>Submit</button>
       </div>
     </form>
