@@ -20,11 +20,11 @@ module.exports = {
       console.log(req.body.email)
       db.User.findOne({email: req.body.email})
         .then(async newUser => {
-          console.log(newUser.password)
-          console.log(req.body.password)
+          // console.log(newUser.password)
+          // console.log(req.body.password)
           var confirm= await newUser.validatePassword(req.body.password)
-          console.log("++++++++++++++++++")
-          console.log(confirm)
+          // console.log("++++++++++++++++++")
+          // console.log(confirm)
           if (confirm) {
             console.log("Correct Password!")
             res.status(200).send("Password Correct");
