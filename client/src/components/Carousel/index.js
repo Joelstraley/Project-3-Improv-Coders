@@ -2,7 +2,11 @@ import React from 'react'
 
 export default function Carousel() {
     return (
-        <div>
+        <div >
+            <div className="CarouselContainer">
+
+
+            </div>
 
         </div>
     )
