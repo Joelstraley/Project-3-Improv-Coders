@@ -1,20 +1,27 @@
 const express = require("express");
-const express = require("express-session");
+const app = express();
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+// const expressSessions = require("express-session");
 const passport= require("passport")
 const passportlocal= require("passport-local").Strategy;
 const path = require("path");
+const router = require("./routes/users")
 const PORT = process.env.PORT || 3001;
-const app = express();
-const mongoose = require("mongoose");
-const db = require("./models");
 const cors = require("cors");
 const routes = require("./routes");
+const db = require("./models");
+const db = require("./models/User");
 
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
+// cookie
+app.use(cookieParser());
 // Body parser
 app.use(express.json());
+
+app.use("/user", userRouter)
 // CORS
 app.use(cors())
 // Serve up static assets (usually on heroku)

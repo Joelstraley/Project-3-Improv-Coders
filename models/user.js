@@ -2,33 +2,57 @@ const mongoose = require("mongoose");
 const bcrypt= require("bcryptjs");
 const Schema = mongoose.Schema;
 
-const SALT_WORK_FACTOR = 5;
+// const SALT_WORK_FACTOR = 10;
 const userSchema = new Schema({
   // name: { type: String, required: true},
   email: { type: String, required: true },
   password: { type: String, required: true },
   
 });
-
 userSchema.pre('save', async function save(next) {
-  if (!this.isModified('password')) return next();
-  try {
-    const salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
-    console.log(this.password)
-    this.password = await bcrypt.hash(this.password, salt);
-    console.log(this.password)
+  if (!this.isModified('password')) 
     return next();
-  } catch (err) {
-    return next(err);
-  }
+  bcrypt.hash(this.password, 10,(err,passwordHash)=> {
+    if(err)
+      return next(err);
+    this.password = passwordHash;
+    next();
+  });
 });
 
-userSchema.methods.validatePassword = async function validatePassword(data) {
-  console.log(this.password)
-  console.log(data)
-  var hashCheck= await bcrypt.compare(data, this.password);
-  return hashCheck;
+userSchema.methods.comparePassword = async function(password, cb){
+  bcrypt.compare(password, this.password, (err,isMatch)=>{
+    if(err)
+     return cb(err);
+    else{
+      if(!isMattch)
+        return cb(null, isMatch);
+      return cb(null,this);
+    }
+  });
+  
 };
+
+// userSchema.pre('save', async function save(next) {
+//   if (!this.isModified('password')) 
+//     return next();
+//   try {
+//     const salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
+//     console.log(this.password)
+//     this.password = await bcrypt.hash(this.password, salt);
+//     console.log(this.password)
+//     return next();
+//   } catch (err) {
+//     return next(err);
+//   }
+// });
+
+// userSchema.methods.validatePassword = async function validatePassword(data) {
+//   console.log(this.password)
+//   console.log(data)
+//   var hashCheck= await bcrypt.compare(data, this.password);
+//   return hashCheck;
+// };
 
 const User = mongoose.model("User", userSchema);
 
