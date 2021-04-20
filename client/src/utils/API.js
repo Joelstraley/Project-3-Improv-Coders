@@ -16,6 +16,13 @@ export default {
         password: loginRequest.password
       });
     },
+    postSignUpRequest: function(signUpRequest) {
+      return axios.post(`${BASEURL}/api/users/signUp`, {
+        //   this become req.body in the server.js post request
+        email: signUpRequest.email,
+        password: signUpRequest.password
+      });
+    },
     // getBaseBreedsList: function() {
     //   return axios.get("https://dog.ceo/api/breeds/list");
     // }
