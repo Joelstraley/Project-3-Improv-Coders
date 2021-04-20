@@ -10,7 +10,7 @@ const router = require("./routes/users")
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const routes = require("./routes");
-const db = require("./models");
+// const db = require("./models");
 const db = require("./models/User");
 
 
