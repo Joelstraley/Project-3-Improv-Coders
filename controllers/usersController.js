@@ -19,10 +19,10 @@ module.exports = {
     login: function(req, res){
       console.log(req.body.email)
       db.User.findOne({email: req.body.email})
-        .then(async dbUser => {
-          console.log(dbUser.password)
+        .then(async newUser => {
+          console.log(newUser.password)
           console.log(req.body.password)
-          var confirm= await dbUser.validatePassword(req.body.password)
+          var confirm= await newUser.validatePassword(req.body.password)
           console.log("++++++++++++++++++")
           console.log(confirm)
           if (confirm) {
