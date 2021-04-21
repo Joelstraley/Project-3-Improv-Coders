@@ -68,6 +68,34 @@ app.use(routes);
 // });
 
 
+/* app.get("/", (req, res) => {
+  res.send("Hello world!");
+ });
+ console.log(req.body)
+
+ app.post("/show, (req, res) => {
+//   // db.User.find()
+db.Show.findOne({title: req.body.email})
+   .then(dbUser => {
+   db.User.create(req.body)
+        res.send("Password Correct");
+     if (req.body.password === dbUser.password) {
+     }else{
+       res.send("Incorrect Password");
+
+     }
+     console.log(dbUser);
+     res.json(dbUser);
+   })
+   .catch(err => {
+  
+     res.json(err);
+   });
+  res.send("Login!");
+ });
+ */
+
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

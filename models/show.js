@@ -14,8 +14,6 @@ const showSchema = new Schema({
   cost: { type: Number, min: 0, required: true}
 });
 
-/*    
-cost: { type: String, required: true}, */
 
 const Show = mongoose.model("Show", showSchema);
 

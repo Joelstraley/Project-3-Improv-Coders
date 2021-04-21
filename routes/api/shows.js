@@ -4,7 +4,10 @@ const showController = require("../../controllers/showsController");
 // Matches with "/api/shows"
 router.route("/")
   .get(showController.findAll)  
-  .post(showController.create);
+  .post(showController.create)
+
+router.route("/testdate")
+  .post(showController.findByToday)
 
 // Matches with "/api/books/:id"
 router

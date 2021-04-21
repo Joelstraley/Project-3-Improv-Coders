@@ -10,7 +10,7 @@ function App() {
       <Form />
       {/* <RegisterLogin /> */}
       {/* <div className="App">
-      {/*    <RegisterLogin /> */}
+      {/*    <RegisterLogin /> */} 
       {/*    <Route exact path={["/", "/about"]} component={About} /> */}
       {/* <Route exact path="/Register" component={RegisterLogin} />
       <Route exact path="/cont" component={Form} /> */} 
