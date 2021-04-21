@@ -1,4 +1,7 @@
 const express = require("express");
+const session = require("express-session");
+const passport= require("./passport.js")
+const passportlocal= require("passport-local").Strategy;
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -10,15 +13,21 @@ const routes = require("./routes");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
+// Body parser
 app.use(express.json());
 // CORS
 app.use(cors())
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-/* mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3logindb",  */
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3logindb",
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
@@ -68,37 +77,14 @@ app.use(routes);
 // });
 
 
-/* app.get("/", (req, res) => {
-  res.send("Hello world!");
- });
- console.log(req.body)
-
- app.post("/show, (req, res) => {
-//   // db.User.find()
-db.Show.findOne({title: req.body.email})
-   .then(dbUser => {
-   db.User.create(req.body)
-        res.send("Password Correct");
-     if (req.body.password === dbUser.password) {
-     }else{
-       res.send("Incorrect Password");
-
-     }
-     console.log(dbUser);
-     res.json(dbUser);
-   })
-   .catch(err => {
-  
-     res.json(err);
-   });
-  res.send("Login!");
- });
- */
-
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

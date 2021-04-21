@@ -7,30 +7,10 @@ const usersController = require("../../controllers/usersController");
 //   .post(usersController.create);
 router.route("/login")
   // .get(usersController.findById)
-  .post((req, res) => {
-    // console.log(req.body)
-    db.User.findOne({email: req.body.email})
-    // db.User.find()
-    // db.User.create(req.body)
-    .then(dbUser => {
-      if (req.body.password === dbUser.password) {
-        res.send("Password Correct");
-  
-      }else{
-        res.send("Incorrect Password");
-      }
-      // console.log(dbUser);
-      // res.json(dbUser);
-  
-    })
-    .catch(err => {
-      res.json(err);
-    });
-    // res.send("Login!");
-  
-  });
+  .post(usersController.login);
 
-
+router.route("/signUp")
+  .post(usersController.signup)
 
 // Matches with "/api/books/:id"
 router

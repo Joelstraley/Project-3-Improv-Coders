@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import API from "../../utils/API.js";
+import { Redirect } from 'react-router-dom';
 
 
 export default class Login extends Component {
     state = {
         email: "",
-        password: ""
+        password: "",
+        redirect: null
         //create the state variable to email and password
         //create a handleinput change methods so that it will update the state
         //make the input fields react controlled
@@ -35,6 +37,8 @@ export default class Login extends Component {
         API.postLoginRequest(this.state)
         .then(res => {
             console.log(res);
+            return <Redirect to="/creatorPage" />;
+            
         });
     };
 

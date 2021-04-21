@@ -16,13 +16,21 @@ module.exports = {
       //   .catch(err => res.status(422).json(err));
     },
     // thie purpose of this function will log a person in
-    login: function(req, res) {
+    login: function(req, res){
+      console.log(req.body.email)
       db.User.findOne({email: req.body.email})
-        .then(dbUser => {
-          if (req.body.password === dbUser.password) {
+        .then(async newUser => {
+          // console.log(newUser.password)
+          // console.log(req.body.password)
+          var confirm= await newUser.validatePassword(req.body.password)
+          // console.log("++++++++++++++++++")
+          // console.log(confirm)
+          if (confirm) {
+            console.log("Correct Password!")
             res.status(200).send("Password Correct");
 
           }else{
+            console.log("Incorrect Password")
             res.status(401).send("Incorrect Password");
           }
 
@@ -34,7 +42,10 @@ module.exports = {
 
       
     },
-    create: function(req, res) {
+
+    signup: function(req, res) {
+      console.log("===========================")
+      console.log(req.body)
       db.User
         .create(req.body)
         .then(dbModel => res.json(dbModel))
