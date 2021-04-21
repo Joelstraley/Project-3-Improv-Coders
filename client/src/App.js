@@ -23,7 +23,7 @@ function App() {
       {/* <Route exact path="/cont" component={Form} /> */}  
 
       {/* <div className="App">
-      {/*    <RegisterLogin /> */}
+      {/*    <RegisterLogin /> */} 
       {/*    <Route exact path={["/", "/about"]} component={About} /> */}
       {/* <Route exact path="/Register" component={RegisterLogin} />
       <Route exact path="/cont" component={Form} /> */} 

@@ -36,7 +36,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows",
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
-});
+})
+      .then(() => console.log('Connected Successfully'))
+      .catch((err) => console.error('Not Connected'));
+
+
+
+
 
 
 // Define API routes here
@@ -70,6 +76,11 @@ app.use(routes);
 
 // });
 
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));

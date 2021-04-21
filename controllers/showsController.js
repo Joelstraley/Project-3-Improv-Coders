@@ -8,9 +8,17 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    findByToday: function(req, res) {
+      db.Show
+        .find({ date: req.body.date })
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
     findById: function(req, res) {
       db.Show
         .findById(req.params.id)
+        //// - Could be FindbyDate(date.now())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
