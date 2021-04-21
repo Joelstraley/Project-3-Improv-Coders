@@ -43,7 +43,7 @@ export default {
       return axios.post(`${BASEURL}/api/shows/testdate`, {
               date: dateQuery
       });
-    }
+    },
 
 
 
@@ -57,12 +57,6 @@ export default {
     // getBaseBreedsList: function() {
     //   return axios.get("https://dog.ceo/api/breeds/list");
     // }
-
-
-   
-
-
-
 
 
   };
