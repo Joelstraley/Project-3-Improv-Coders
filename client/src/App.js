@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import AboutUs from "./pages/Main/index"
 import RegisterLogin from "./pages/RegisterLogin"
 import Form from "./pages/Form";
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Form />
+      <AboutUs />
       {/* <RegisterLogin /> */}
       {/* <div className="App">
       {/*    <RegisterLogin /> */}
@@ -18,6 +20,5 @@ function App() {
     // </div>
   );
 }
-
 
 export default App;
