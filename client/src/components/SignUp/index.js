@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { Redirect} from "react-router-dom";
 import API from "../../utils/API.js";
 
 export default class SignUp extends Component {
     state = {
         email: "",
-        password: ""
+        password: "",
+        redirect: null
+
         //create the state variable to email and password
         //create a handleinput change methods so that it will update the state
         //make the input fields react controlled
@@ -46,6 +49,11 @@ export default class SignUp extends Component {
                     .then(res=>{
                         console.log("hello");
                         console.log(res);
+                        if(res.status === 200){
+                            this.setState({
+                                redirect: "/creatorPage"
+                            })
+                        }
                         
                     })
                 })
@@ -54,6 +62,9 @@ export default class SignUp extends Component {
         });
     };
     render() {
+        if(this.state.redirect){
+            return < Redirect to = {this.state.redirect} />
+        }
         return (
             <div className="login-wrapper">
             <h1>Register Your Creator Account Now!</h1>
