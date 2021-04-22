@@ -6,7 +6,7 @@ router.route("/")
   .get(showController.findAll)  
   .post(showController.create)
 
-router.route("/testdate")
+router.route("/today")
   .post(showController.findByToday)
 
 // Matches with "/api/books/:id"

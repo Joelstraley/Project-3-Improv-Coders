@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CardSwipeBlock from '../../components/CardSwipeBlock';
+import CardContainer from '../../components/CardContainer'
+import CardsToday from '../../components/CardsToday';
+import CardsAll from '../../components/CardsAll';
+import Search from '../../components/Search';
 import FormComponent from "../../components/Form";
-
-
-
 
 
 export default class Form extends Component {
@@ -11,8 +11,11 @@ export default class Form extends Component {
         return (
             <div>
                 <FormComponent />
-                <CardSwipeBlock />
-            
+               {/*  <Search /> */}
+               <CardContainer />
+             {/*   <CardsToday /> 
+              <CardsAll />
+              </CardContainer> */}
             </div>
         )
     }

@@ -16,8 +16,6 @@ export default {
         password: loginRequest.password
       });
     },
-
-
     postShowData: function(showData) {
       return axios.post(`${BASEURL}/api/shows`, {
         //   this become req.body in the server.js post request
@@ -40,12 +38,10 @@ export default {
     },
 
     getTodaysShowData: function(dateQuery) {
-      return axios.post(`${BASEURL}/api/shows/testdate`, {
+      return axios.post(`${BASEURL}/api/shows/today`, {
               date: dateQuery
       });
-    }
-
-
+    },
 
     postSignUpRequest: function(signUpRequest) {
       return axios.post(`${BASEURL}/api/users/signUp`, {
@@ -57,13 +53,6 @@ export default {
     // getBaseBreedsList: function() {
     //   return axios.get("https://dog.ceo/api/breeds/list");
     // }
-
-
-   
-
-
-
-
 
   };
   

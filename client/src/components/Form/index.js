@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import axios from 'axios';
-import "./style.css";
+import "../Form/style.css";
 
 export default class FormComponent extends Component { 
   // Setting the component's initial state
@@ -17,6 +17,7 @@ export default class FormComponent extends Component {
     eventImage: "",
     cost: "", 
   };
+
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -45,19 +46,23 @@ render(){
         <h1 className='text-3xl font-semibold'>Create Your Event</h1>
         <div>
             <label htmlFor="eventName">Name of Event</label>
-            <input className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" type="text" name="eventName" id="eventName" placeholder="required" 
+            <input className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" 
+            type="text" 
+            name="eventName" 
+            id="eventName" placeholder="required" 
             onChange={this.handleInputChange}
             value={this.state.eventName} required></input>
         </div>
         <div>
             <label htmlFor="eventType">Event Type<br></br> <span className="text-sm text-gray-600" id="imageSpan">(pick one)</span></label>
             <select className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-            id="eventType" name="eventType" size="5"
+            id="eventType" 
+            name="eventType" size="5"
             onChange={this.handleInputChange}
             value={this.state.eventType} >
-                <option value="standup">Stand-Up</option>
                 <option value="improv">Improv</option>
                 <option value="sketch">Sketch</option>
+                <option value="standup">Stand-Up</option>
                 <option value="characters">Characters</option>
                 <option value="variety">Variety</option>
             </select>
@@ -124,6 +129,7 @@ render(){
           type="url" 
           id="eventLink" 
           name="eventLink"
+          placeholder="required"
           onChange={this.handleInputChange}
           value={this.state.eventLink}></input>
       </div>
@@ -136,6 +142,7 @@ render(){
           type="url" 
           id="eventImage" 
           name="eventImage"
+          placeholder="required"
           onChange={this.handleInputChange}
           value={this.state.eventImage}></input>
       </div>
@@ -149,7 +156,7 @@ render(){
           id="cost" 
           name="cost"
           min="0"
-          placeholder="$"
+          placeholder="$ required"
           onChange={this.handleInputChange}
           value={this.state.cost}></input>
       </div>

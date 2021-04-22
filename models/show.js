@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 const showSchema = new Schema({
   eventName: { type: String, required: true },
   eventLink: { type: String, required: true },
-  eventType: { type: String, required: true, default: 'standup' },
+  eventType: { type: String, required: true},
   eventImage: { type: String, required: true },
   description: String,
   performers: String, 
-  date: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now, required: true},
   startTime: String,
   endTime: String,  
-  cost: { type: Number, min: 0, required: true}
+  cost: { type: Number, min: 0}
 });
 
 

@@ -6,7 +6,7 @@ import Register from "./pages/Register"
 import LoginPage from "./pages/LoginPage"
 import HomePage from "./pages/Event-Page"
 import CreatorPage from "./components/CreatorPage"
-// import Form from "./pages/Form";
+import Form from "./pages/Form";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
       <Route exact path="/creatorPage" component= {CreatorPage} />
+      <Route exact path="/form" component= {Form} />
       {/* in case there is a route that is not clearly defined, this route will direct the user back to  the home page */}
       <Route path="*" component={HomePage} />
       {/* <Route exact path="/cont" component={Form} /> */}  
