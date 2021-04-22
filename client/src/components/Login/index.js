@@ -44,7 +44,7 @@ export default class Login extends Component {
             .then(res =>{
             console.log(res.data.token)
                 const token = res.data.token;
-                localStorage.setItem("accessToken", token );
+                // localStorage.setItem("accessToken", token );
                 API.getCreatorProfile(token)
                 .then(res=>{
                     console.log("hello");

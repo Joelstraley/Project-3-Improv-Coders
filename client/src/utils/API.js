@@ -34,7 +34,7 @@ export default {
       // })
     },
     getCreatorProfile: function(retrieveTokenSession) {
-      return axios.get(`${BASEURL}/api/users/profile?secret_token=${retrieveTokenSession}`);
+      return axios.get(`${BASEURL}/user/profile?secret_token=${retrieveTokenSession}`);
     },
 
     // getBaseBreedsList: function() {
