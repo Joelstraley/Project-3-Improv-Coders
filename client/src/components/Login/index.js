@@ -34,15 +34,34 @@ export default class Login extends Component {
         //   email: "",
         //   password: ""
         // });
-        API.postLoginRequest(this.state)
-        .then(res => {
-            console.log(res);
-            // return <Redirect to="/creatorPage" />;
+        // API.postLoginRequest(this.state)
+        // .then(res => {
+        //     console.log(res);
+        //     // return <Redirect to="/creatorPage" />;
             
-        });
+        // });
+        API.postLoginRequest(this.state)
+            .then(res =>{
+            console.log(res.data.token)
+                const token = res.data.token;
+                API.getCreatorProfile(token)
+                .then(res=>{
+                    console.log("hello");
+                    console.log(res);
+                    if(res.status === 200){
+                        this.setState({
+                            redirect: "/creatorPage"
+                        })
+                    }
+                        
+                })
+            })
     };
 
     render() {
+        if(this.state.redirect){
+            return < Redirect to = {this.state.redirect} />
+        }
         return (
             <div className="login-wrapper">
             <h1>Please Log In</h1>
