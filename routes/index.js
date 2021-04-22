@@ -5,6 +5,7 @@ const express = require('express');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const router = require("express").Router();
+const secureRoute = require("./secure_routes/secure-routes")
 
 
 router.get("/", (req, res)=>{
@@ -12,6 +13,8 @@ router.get("/", (req, res)=>{
 })
 // API Routes
 router.use("/api", apiRoutes);
+
+router.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
 
 //SignUp and Register Authentication Routes
 // router.post(

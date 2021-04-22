@@ -54,7 +54,7 @@ require("./auth/passport.js")
 
 
 const routes = require('./routes');
-const secureRoute = require('./routes/api/secure-routes');
+// const secureRoute = require('./routes/secure_routes/secure-routes');
 
 
 
@@ -62,7 +62,8 @@ const secureRoute = require('./routes/api/secure-routes');
 app.use('/', routes);
 
 // Plug in the JWT strategy as a middleware so only verified users can access this route.
-app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
+
+// app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
  
 
 app.use(function(err, req, res, next) {

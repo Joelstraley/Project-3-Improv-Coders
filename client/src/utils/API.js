@@ -15,6 +15,8 @@ export default {
         email: loginRequest.email,
         password: loginRequest.password
       });
+      
+
     },
     postSignUpRequest: function(signUpRequest) {
       return axios.post(`${BASEURL}/api/users/signupPassport`, {
@@ -22,6 +24,14 @@ export default {
         email: signUpRequest.email,
         password: signUpRequest.password
       });
+      // .then( (response) => {
+            
+      //   let token = response.data.access;
+      //   localStorage.setItem("SavedToken", 'Bearer ' + token);
+      //   axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+      //   (this.$router.push({name:'HomePage'}));
+        
+      // })
     },
     getCreatorProfile: function(retrieveTokenSession) {
       return axios.get(`${BASEURL}/api/users/profile?secret_token=${retrieveTokenSession}`);

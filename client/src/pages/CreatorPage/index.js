@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import MemberPageComponent from '../../components/MemberPageComponent/index.js';
+import MemberPageComponent from "../../components/MemberPage"
+
 
 export default class CreatorPage extends Component {
     render() {

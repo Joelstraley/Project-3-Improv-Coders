@@ -44,6 +44,7 @@ export default class Login extends Component {
             .then(res =>{
             console.log(res.data.token)
                 const token = res.data.token;
+                localStorage.setItem("accessToken", token );
                 API.getCreatorProfile(token)
                 .then(res=>{
                     console.log("hello");
@@ -61,6 +62,7 @@ export default class Login extends Component {
     render() {
         if(this.state.redirect){
             return < Redirect to = {this.state.redirect} />
+        
         }
         return (
             <div className="login-wrapper">
