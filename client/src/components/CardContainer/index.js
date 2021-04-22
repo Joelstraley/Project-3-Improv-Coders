@@ -10,7 +10,7 @@ export default class CardContainer extends Component {
  
     return (
       
-            <div className="p-20 bg-yellow-200 min-h-screen flex items-center justify-center">
+            <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">
                    <CardsAll />
                     </div>
          

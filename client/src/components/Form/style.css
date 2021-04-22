@@ -1,13 +1,15 @@
 #imageSpan {
     font-style: italic;
-    opacity: .8;
+    opacity: .9;
 }
 
-form {
+.wholeForm {
     justify-items: center;
     justify-content: center;
+    text-align: center;
     margin: auto;
     display: block;
+
 }
 
 input{
@@ -16,8 +18,9 @@ input{
 }
 
 select {
-    resize:horizontal; 
-    width:20px;
-    color: hsl(300, 91%, 27%);
+    justify-content: inherit;
+}
 
+.submit {
+    background-color: #0aa847;
 }

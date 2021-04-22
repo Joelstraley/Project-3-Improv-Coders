@@ -46,19 +46,16 @@ export default class CardAll extends Component {
                         <p className="text-purple-700 mb-2">{show.description}</p>
                         <a href={show.eventLink} className="text-purple-600 hover:text-purple-500 underline text-sm">{show.eventLink}</a>
             </div>
-
-            hs full = full card 
-
-    
+            hs full = full card     
     */
-         <div className="grid grid-cols-10 grid-rows-1 gap-x-2 gap-y-1" id="app">
+         <div className="grid grid-cols-10 gap-4" id="app">
               <h3 className="col-span-10 text-black-300 font-bold">All Shows</h3>
                {this.state.shows.map(show => { return (  
-                    <div className="rounded-lg shadow-lg" id="fullCard"  key={show._id}>
+                    <div className="rounded-lg shadow-lg" id="fullCard" key={show._id}>
                         <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
                         <div className="p-6">
                         <h2 className="font-bold mb-2 text-2xl text-white item">{show.eventName}</h2>
-                        <p className="text-white mb-2 item">This is a little bit better of a card!</p>
+                        <p className="text-white mb-2 item">{show.description}</p>
                         <a href="#" className="text-white hover:text-black-500 underline text-sm item">Read More </a>
                         </div>
                 </div>)})}

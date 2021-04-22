@@ -41,7 +41,7 @@ export default class FormComponent extends Component {
 
 render(){
   return (
-    <div className="form">
+    <div className="form wholeForm bg-yellow-200 p-20">
       <form className="px-4 my-32 max-w-3xl mx-auto space-y-6">
         <h1 className='text-3xl font-semibold'>Create Your Event</h1>
         <div>
@@ -54,8 +54,18 @@ render(){
             value={this.state.eventName} required></input>
         </div>
         <div>
+          <label htmlFor="description">Event Description</label>
+          <input type="text" 
+          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          id="description" 
+          name="description" required
+          minLength="5" maxLength="500" size="10"
+          onChange={this.handleInputChange}
+          value={this.state.description}></input>
+      </div>
+        <div>
             <label htmlFor="eventType">Event Type<br></br> <span className="text-sm text-gray-600" id="imageSpan">(pick one)</span></label>
-            <select className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+            <select className="border border-gray-400 block py-2 text-center px-4 w-min rounded focus:outline-none focus:border-teal-500"
             id="eventType" 
             name="eventType" size="5"
             onChange={this.handleInputChange}
@@ -67,6 +77,30 @@ render(){
                 <option value="variety">Variety</option>
             </select>
         </div>
+        <div>
+          <label htmlFor="eventLink">Event Link</label>
+          <input 
+          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          type="url" 
+          id="eventLink" 
+          name="eventLink"
+          placeholder="required"
+          onChange={this.handleInputChange}
+          value={this.state.eventLink}></input>
+      </div>
+      <div>
+          <label htmlFor="eventImage">Event Image <br></br> <span id="imageSpan" 
+          className="text-sm text-gray-600">
+            if you need to upload an image use <a href="https://imgbb.com/">imgbb.com</a><br></br>For the love of comedy, make it end in a file format name (jpg, png, etc)</span></label>
+          <input 
+          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+          type="url" 
+          id="eventImage" 
+          name="eventImage"
+          placeholder="required"
+          onChange={this.handleInputChange}
+          value={this.state.eventImage}></input>
+      </div>
       {/* TODO(future):
         - Add Button to "Add Performer"
         - have input populate in list
@@ -113,43 +147,9 @@ render(){
              value={this.state.endTime}></input>
       </div>
       <div>
-          <label htmlFor="description">Event Description</label>
-          <input type="text" 
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-          id="description" 
-          name="description" required
-          minLength="5" maxLength="100" size="10"
-          onChange={this.handleInputChange}
-          value={this.state.description}></input>
-      </div>
-      <div>
-          <label htmlFor="eventLink">Event Link</label>
-          <input 
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-          type="url" 
-          id="eventLink" 
-          name="eventLink"
-          placeholder="required"
-          onChange={this.handleInputChange}
-          value={this.state.eventLink}></input>
-      </div>
-      <div>
-          <label htmlFor="eventImage">Event Image <br></br> <span id="imageSpan" 
-          className="text-sm text-gray-600">
-            if you need to upload an image use <a href="https://imgbb.com/">imgbb.com</a></span><br></br>For the love of comedy, make it end in a file format name (jpg, png, etc)</label>
-          <input 
-          className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-          type="url" 
-          id="eventImage" 
-          name="eventImage"
-          placeholder="required"
-          onChange={this.handleInputChange}
-          value={this.state.eventImage}></input>
-      </div>
-      <div>
           <label htmlFor="cost" className="py-1">Cost <br></br>  <span id="imageSpan" 
           className="text-sm text-gray-600">
-            put 0 if show is Free </span></label>
+            0 if show is Free </span></label>
           <input 
           className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
           type="number" 
@@ -163,7 +163,7 @@ render(){
       <div>
         <label htmlFor="submit"></label>
         <button 
-        className='text-3xl font-semibold drop-shadow-md' 
+        className='text-2xl text-white font-semibold drop-shadow-md py-4 px-8 rounded-xl shadow-lg submit' 
         onClick={this.handleFormSubmit}>Submit</button>
       </div>
     </form>
