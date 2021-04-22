@@ -33,7 +33,24 @@ export default class SignUp extends Component {
         // });
         API.postSignUpRequest(this.state)
         .then(res => {
-            console.log(res);
+            if(res.status === 200){
+                const userLogin = {
+                    email: this.state.email,
+                    password: this.state.password
+                }
+                API.postLoginRequest(userLogin)
+                .then(res =>{
+                    console.log(res.data.token)
+                    const token = res.data.token;
+                    API.getCreatorProfile(token)
+                    .then(res=>{
+                        console.log("hello");
+                        console.log(res);
+                        
+                    })
+                })
+            }
+            // console.log(res)
         });
     };
     render() {

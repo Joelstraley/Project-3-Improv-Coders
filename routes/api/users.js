@@ -64,6 +64,7 @@ router.post(
 router.get(
   '/profile',
   (req, res, next) => {
+    console.log("trying to get user profile");
     if(req.query.secret_token){
       res.json({
         message: 'You made it to the secure route',

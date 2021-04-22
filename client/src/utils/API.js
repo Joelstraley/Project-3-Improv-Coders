@@ -10,19 +10,23 @@ export default {
       return axios.get(`${BASEURL}/`);
     },
     postLoginRequest: function(loginRequest) {
-      return axios.post(`${BASEURL}/api/users/login`, {
+      return axios.post(`${BASEURL}/api/users/loginPassport`, {
         //   this become req.body in the server.js post request
         email: loginRequest.email,
         password: loginRequest.password
       });
     },
     postSignUpRequest: function(signUpRequest) {
-      return axios.post(`${BASEURL}/api/users/signUp`, {
+      return axios.post(`${BASEURL}/api/users/signupPassport`, {
         //   this become req.body in the server.js post request
         email: signUpRequest.email,
         password: signUpRequest.password
       });
     },
+    getCreatorProfile: function(retrieveTokenSession) {
+      return axios.get(`${BASEURL}/api/users/profile?secret_token=${retrieveTokenSession}`);
+    },
+
     // getBaseBreedsList: function() {
     //   return axios.get("https://dog.ceo/api/breeds/list");
     // }

@@ -37,7 +37,7 @@ export default class Login extends Component {
         API.postLoginRequest(this.state)
         .then(res => {
             console.log(res);
-            return <Redirect to="/creatorPage" />;
+            // return <Redirect to="/creatorPage" />;
             
         });
     };
