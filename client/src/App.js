@@ -18,12 +18,13 @@ function App() {
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
       <Route exact path="/creatorPage" component= {CreatorPage} />
+      <Route exact path="/form" component= {Form} />
       {/* in case there is a route that is not clearly defined, this route will direct the user back to  the home page */}
       <Route path="*" component={HomePage} />
       {/* <Route exact path="/cont" component={Form} /> */}  
 
       {/* <div className="App">
-      {/*    <RegisterLogin /> */}
+      {/*    <RegisterLogin /> */} 
       {/*    <Route exact path={["/", "/about"]} component={About} /> */}
       {/* <Route exact path="/Register" component={RegisterLogin} />
       <Route exact path="/cont" component={Form} /> */} 

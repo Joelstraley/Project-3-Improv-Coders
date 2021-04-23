@@ -1,0 +1,26 @@
+#imageSpan {
+    font-style: italic;
+    opacity: .9;
+}
+
+.wholeForm {
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    display: block;
+
+}
+
+input{
+    margin: auto;
+    display: block;
+}
+
+select {
+    justify-content: inherit;
+}
+
+.submit {
+    background-color: #0aa847;
+}
