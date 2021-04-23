@@ -10,11 +10,13 @@ export default {
       return axios.get(`${BASEURL}/`);
     },
     postLoginRequest: function(loginRequest) {
-      return axios.post(`${BASEURL}/api/users/login`, {
+      return axios.post(`${BASEURL}/api/users/loginPassport`, {
         //   this become req.body in the server.js post request
         email: loginRequest.email,
         password: loginRequest.password
       });
+      
+
     },
     postShowData: function(showData) {
       return axios.post(`${BASEURL}/api/shows`, {
@@ -44,12 +46,24 @@ export default {
     },
 
     postSignUpRequest: function(signUpRequest) {
-      return axios.post(`${BASEURL}/api/users/signUp`, {
+      return axios.post(`${BASEURL}/api/users/signupPassport`, {
         //   this become req.body in the server.js post request
         email: signUpRequest.email,
         password: signUpRequest.password
       });
+      // .then( (response) => {
+            
+      //   let token = response.data.access;
+      //   localStorage.setItem("SavedToken", 'Bearer ' + token);
+      //   axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+      //   (this.$router.push({name:'HomePage'}));
+        
+      // })
     },
+    getCreatorProfile: function(retrieveTokenSession) {
+      return axios.get(`${BASEURL}/user/profile?secret_token=${retrieveTokenSession}`);
+    },
+
     // getBaseBreedsList: function() {
     //   return axios.get("https://dog.ceo/api/breeds/list");
     // }

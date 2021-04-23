@@ -5,8 +5,8 @@ import "./App.css";
 import Register from "./pages/Register"
 import LoginPage from "./pages/LoginPage"
 import HomePage from "./pages/Event-Page"
-import CreatorPage from "./components/CreatorPage"
-import Form from "./pages/Form";
+import CreatorPage from "./pages/CreatorPage"
+// import Form from "./pages/Form";
 
 function App() {
   return (
