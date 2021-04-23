@@ -5,16 +5,23 @@
 }
 
 #fullCard {
+    background-color: #0aa847;
+    display: inline-block;
+    vertical-align: top;
+
+
+/* 
     justify-self: center;
     background-color: #0aa847;
     text-shadow: black;
     margin: auto;
-    display: block;
+    display: inline-block;
+    vertical-align: top;
     grid-auto-flow: column;
     scroll-snap-align: center;
     padding: calc(var(--gutter) / 2 * 1.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
