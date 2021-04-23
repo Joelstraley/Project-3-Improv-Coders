@@ -28,12 +28,12 @@ export default {
         description: showData.description,
         eventLink: showData.eventLink,
         eventImage: showData.eventImage,
-        cost: showData.cost
+        cost: showData.cost,
+        eventPlace: showData.eventPlace
       });
     },
 
     getAllShowData: function() {
-      console.log(`${BASEURL}/api/shows`)
       return axios.get(`${BASEURL}/api/shows`)
     },
 

@@ -8,6 +8,8 @@
     background-color: #0aa847;
     display: inline-block;
     vertical-align: top;
+    display: flex;
+    flex-direction: column;
 
 
 /* 
@@ -24,4 +26,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; */
+}
+
+#cardImage {
+    object-fit: contain;
 }
