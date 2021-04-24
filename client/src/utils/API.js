@@ -44,12 +44,12 @@ export default {
         description: showData.description,
         eventLink: showData.eventLink,
         eventImage: showData.eventImage,
-        cost: showData.cost
+        cost: showData.cost,
+        eventPlace: showData.eventPlace
       });
     },
 
     getAllShowData: function() {
-      console.log(`${BASEURL}/api/shows`)
       return axios.get(`${BASEURL}/api/shows`)
     },
 
@@ -58,6 +58,11 @@ export default {
               date: dateQuery
       });
     },
+
+   /*  search: function(query) {
+      return axios.get(`${BASEURL}/api/shows?q` + query);
+      }, */
+  
 
     postSignUpRequest: function(signUpRequest) {
       return axios.post(`${BASEURL}/api/users/signupPassport`, {
@@ -71,7 +76,6 @@ export default {
       var retrieveTokenSession = localStorage.getItem("accessToken");
       console.log("Getting AccessToken", retrieveTokenSession);
       return axios.get(`${BASEURL}/secure/profile?secret_token=${retrieveTokenSession}`);
-      
     },
 
     logoutSession: function(){

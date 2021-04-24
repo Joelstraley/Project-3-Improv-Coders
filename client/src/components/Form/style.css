@@ -17,8 +17,10 @@ input{
     display: block;
 }
 
-select {
-    justify-content: inherit;
+.eventTypebox {
+   
+    display: block;
+    margin: auto;
 }
 
 .submit {
