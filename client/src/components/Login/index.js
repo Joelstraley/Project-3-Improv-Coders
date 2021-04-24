@@ -4,16 +4,21 @@ import { Redirect } from 'react-router-dom';
 
 
 export default class Login extends Component {
-    state = {
-        email: "",
-        password: "",
-        redirect: null
-        //create the state variable to email and password
-        //create a handleinput change methods so that it will update the state
-        //make the input fields react controlled
-        //handle from submit method, will fire when someone logs in
-        // in the form submit method makes sure it is going to backend with a post req /login
+    constructor(props){
+        super(props);
+        localStorage.setItem("test", 11);
+        this.state = {
+            email: "",
+            password: "",
+            redirect: null
+            //create the state variable to email and password
+            //create a handleinput change methods so that it will update the state
+            //make the input fields react controlled
+            //handle from submit method, will fire when someone logs in
+            // in the form submit method makes sure it is going to backend with a post req /login
+        }
     }
+    
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
         const { name, value } = event.target;
@@ -23,7 +28,7 @@ export default class Login extends Component {
           [name]: value
         });
     };
-    handleFormSubmit = event => {
+    handleFormSubmit = async (event) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
     
@@ -34,15 +39,53 @@ export default class Login extends Component {
         //   email: "",
         //   password: ""
         // });
-        API.postLoginRequest(this.state)
-        .then(res => {
-            console.log(res);
-            return <Redirect to="/creatorPage" />;
+        // API.postLoginRequest(this.state)
+        // .then(res => {
+        //     console.log(res);
+        //     // return <Redirect to="/creatorPage" />;
             
-        });
+        // });
+        try {
+            await API.postLoginRequest(this.state)
+            this.setState({
+                redirect: "/creatorPage"
+            })
+                
+        } catch (error) {
+
+            
+        }
+        // await API.postLoginRequest(this.state)
+
+            // .then(res =>{
+            //     // console.log(res.data.token)
+            //     const token = res.data.token;
+            //     console.log(token)
+            //     localStorage.setItem("accessToken", token );
+            //     console.log("Getting AccessToken", localStorage.getItem("accessToken"));
+
+            //     // API.getCreatorProfile(token)
+            //     // .then(res=>{
+            //     //     console.log("hello");
+            //     //     console.log(res);
+            //     //     if(res.status === 200){
+                        // this.setState({
+                        //     redirect: "/creatorPage"
+                        // })
+            //     //     }
+                        
+            //     // })
+            // })
+            // .catch(err =>{
+            //     console.log(err)
+            // })
     };
 
     render() {
+        if(this.state.redirect){
+            return < Redirect to = {this.state.redirect} />
+        
+        }
         return (
             <div className="login-wrapper">
             <h1>Please Log In</h1>

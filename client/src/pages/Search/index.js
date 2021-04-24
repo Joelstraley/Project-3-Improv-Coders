@@ -16,7 +16,6 @@ export default class Search extends Component {
   componentDidMount = () => {
     API.getAllShowData().then((response) => {
       let data = response.data;
-      console.log("hi")
       this.setState({ searchShows: data })
     })
       .catch(() => {
@@ -34,18 +33,34 @@ export default class Search extends Component {
     ]
   }) */
 
+/* 
+  handleInputChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    this.setState({
+      [name]: value
+    });
+  }; */
+
 
   handleInputChange = (e) => {
     this.state.searchTerm = e.target.value
-    this.setState({ searchTerm: this.state.searchTerm})
-    console.log(this.state.searchTerm)
-    const results = this.fuse.search(this.state.searchTerm) 
-    this.setState({ searchResults: results }) 
+    const results = this.fuse(this.state.searchTerm)
+    this.setState({ searchResults: results })
+    console.log(results)
   }
 
+  searchAllShows = query => {
+    API.search(query)
+      .then(res => this.setState({ searchShows: res.data }))
+      .catch(err => console.log(err));
+  };
+
+
   handleFormSubmit = (e) => {
-    
-  }
+    e.preventDefault();
+    this.searchAllShows(this.state.searchTerm);
+  };
 
 
 

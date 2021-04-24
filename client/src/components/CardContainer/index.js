@@ -7,17 +7,18 @@ import dayjs from "dayjs";
 
 export default class CardContainer extends Component {
 
-    render(){   
- 
-    return (
-      
-            <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">                  
-               {/*     <CardsToday />
+    render() {
+
+        return (
+
+            <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">
+                {/*     <CardsToday />
                    <CardsAll /> */}
-                   <CardsFuture />
-                {/*    <CardsToday /> */}
-                    </div>
-         
+                <CardsToday />
+                <CardsFuture />
+                <CardsToday />
+            </div>
+
         )
-        };
+    };
 };

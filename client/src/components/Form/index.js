@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import axios from 'axios';
 import "../Form/style.css";
 
 export default class FormComponent extends Component {
@@ -16,7 +15,7 @@ export default class FormComponent extends Component {
     description: "",
     eventLink: "",
     eventImage: "",
-    cost: "",
+    cost: ""
   };
 
 
@@ -69,7 +68,7 @@ export default class FormComponent extends Component {
             <label htmlFor="eventType">Event Type</label>
             <select className="border border-gray-400 block py-2 text-center px-4 w-min rounded focus:outline-none focus:border-teal-500 eventTypebox"
               id="eventType"
-              name="eventType" size="5"
+              name="eventType" 
               onChange={this.handleInputChange}
               value={this.state.eventType} >
               <option value="improv">Improv</option>

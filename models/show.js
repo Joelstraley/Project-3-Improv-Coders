@@ -5,7 +5,7 @@ const showSchema = new Schema({
   eventName: { type: String, required: true },
   eventPlace: String,
   eventLink: { type: String, required: true },
-  eventType: { type: String, required: true},
+  eventType: { type: String, default: 'improv' },
   eventImage: { type: String, required: true },
   description: String,
   performers: String, 

@@ -6,19 +6,19 @@ import "./style.css";
 
 export default class CardsFuture extends Component {
   state = {
-    shows: []
+    futureShows: []
   };
 
   componentDidMount = () => {
     var now = dayjs(Date.now()).add(1, 'day').format('YYYY-MM-DD')
     API.getAllShowData().then((response) => {
       let data = response.data
+      var tomorrowShows = []
       for (let i = 0; i < data.length; i++) {
         let date = response.data[i].date
-        console.log(date)
         if (date > now) {
-          let tomorrowShows = response.data
-          this.setState({ shows: tomorrowShows })
+          tomorrowShows.push( response.data[i])
+          this.setState({ futureShows: tomorrowShows }) 
         } else {
           console.log("false")
         }
@@ -50,7 +50,7 @@ export default class CardsFuture extends Component {
     return (
       <div className="grid grid-cols-5 gap-4" id="app" >
         <h3 className="col-span-5 text-black-500 font-bold">Future Shows</h3>
-        {this.state.shows.map(show => {
+        {this.state.futureShows.map(show => {
           return (
             <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
               <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>

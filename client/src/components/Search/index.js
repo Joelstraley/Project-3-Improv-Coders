@@ -24,27 +24,29 @@ export default class Search extends Component {
   };
 
 
-  fuse = new Fuse(this.state.shows, {
-    keys: [
-      'eventName',
-      'performers',
-      'eventType',
-      'description'
-    ]
-  })
+  
 
   handleInputChange = (e) => {
     this.state.searchTerm = e.target.value
+    fuse = new Fuse(this.state.shows, {
+      keys: [
+        'eventName',
+        'performers',
+        'eventType',
+        'description'
+      ]
+    })
     const results = this.fuse(this.state.searchTerm)
     this.setState({ searchResults: results })
+    console.log(results)
   }
 
 
   render() {
 
     return (
-      <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">
-        <div class="p-8">
+      <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center shadow-xl">
+        <div class="p-8 ">
           <div class="bg-white flex items-center rounded-full shadow-xl">
             <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
               id="search"
@@ -53,7 +55,7 @@ export default class Search extends Component {
             <div class="p-4">
               <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
                 icon
-      </button>
+               </button>
             </div>
           </div>
         </div>

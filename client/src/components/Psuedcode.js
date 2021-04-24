@@ -33,9 +33,13 @@ Create Card Flyer Page
 
 Link on Cards NOT to event but to Card Flyer page 
 
+Sort Cards by Ascending order
+if cost is $0 display FREE 
+
 Members page loads all THEIR shows
 ---Members cards have EDIT button to EDIT their shows 
 
 Make all Mobile responsive 
+
 
  */
