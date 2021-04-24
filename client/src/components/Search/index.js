@@ -32,6 +32,7 @@ export default class Search extends Component {
       keys: [
         'eventName',
         'performers',
+        'eventPlace',
         'eventType',
         'description'
       ]
