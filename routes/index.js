@@ -14,7 +14,7 @@ router.get("/", (req, res)=>{
 // API Routes
 router.use("/api", apiRoutes);
 
-router.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
+router.use('/secure', passport.authenticate('jwt', { session: false }), secureRoute);
 
 //SignUp and Register Authentication Routes
 // router.post(

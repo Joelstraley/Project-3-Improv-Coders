@@ -7,7 +7,7 @@ const showSchema = new Schema({
   eventType: { type: String, required: true},
   eventImage: { type: String, required: true },
   description: String,
-  performers: String, 
+  performers: [], 
   date: { type: Date, default: Date.now, required: true},
   startTime: String,
   endTime: String,  

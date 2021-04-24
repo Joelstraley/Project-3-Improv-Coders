@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import MemberPageComponent from "../../components/MemberPage";
 import API from "../../utils/API";
+import NavBar from "../../components/Navbar";
+import FormComponent from "../../components/Form"
 
 
 export default class CreatorPage extends Component {
     constructor(props){
         super(props)
+        this.state = {
+            user: null
+            
+        }
        
     }
     componentDidMount(){
@@ -13,14 +19,18 @@ export default class CreatorPage extends Component {
         .then(res=>{
             console.log("hello");
             console.log(res);
+            this.setState({user: res.data.user})
         })
         
 
     }
     render() {
         return (
+
             <div>
-                <MemberPageComponent />
+                <NavBar />
+                {this.state.user ? <MemberPageComponent email= {this.state.user.email} />: <h1>loading</h1>}
+                <FormComponent />
             </div>
         )
     }

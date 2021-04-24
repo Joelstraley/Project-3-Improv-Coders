@@ -43,20 +43,22 @@ export default class SignUp extends Component {
                 }
                 API.postLoginRequest(userLogin)
                 .then(res =>{
-                    console.log(res.data.token)
-                    const token = res.data.token;
-                    API.getCreatorProfile(token)
-                    .then(res=>{
-                        console.log("hello");
-                        console.log(res);
+                    
+                    // console.log(resAPI)
+                    // console.log(resAPI.data.token)
+                    // const token = resAPI.data.token;
+                    // API.getCreatorProfile()
+                    // .then(res=>{
+                    //     console.log("hello");
+                    //     console.log(res);
                         if(res.status === 200){
                             this.setState({
                                 redirect: "/creatorPage"
                             })
                         }
                         
-                    })
                 })
+                
             }
             // console.log(res)
         });
