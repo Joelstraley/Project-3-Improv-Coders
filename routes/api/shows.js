@@ -4,7 +4,7 @@ const showController = require("../../controllers/showsController");
 // Matches with "/api/shows"
 router.route("/")
   .get(showController.findAll)  
-  .post(showController.create)
+  // .post(showController.create)
 
 router.route("/today")
   .post(showController.findByToday)

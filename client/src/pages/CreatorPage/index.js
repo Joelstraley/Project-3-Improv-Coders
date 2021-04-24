@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MemberPageComponent from "../../components/MemberPage";
 import API from "../../utils/API";
 import NavBar from "../../components/Navbar";
+import FormComponent from "../../components/Form"
 
 
 export default class CreatorPage extends Component {
@@ -29,6 +30,7 @@ export default class CreatorPage extends Component {
             <div>
                 <NavBar />
                 {this.state.user ? <MemberPageComponent email= {this.state.user.email} />: <h1>loading</h1>}
+                <FormComponent />
             </div>
         )
     }
