@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 export default class Login extends Component {
     constructor(props){
         super(props);
-        localStorage.setItem("test", 11);
+        // localStorage.setItem("test", 11);
         this.state = {
             email: "",
             password: "",

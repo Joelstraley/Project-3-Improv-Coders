@@ -15,13 +15,13 @@ export default {
         //   this become req.body in the server.js post request
         email: loginRequest.email,
         password: loginRequest.password
-      }).then(res =>{
-        // console.log(res.data.token)
-        const token = res.data.token;
+      }).then(resServer =>{
+        console.log(resServer)
+        const token = resServer.data.token;
         console.log(token)
         localStorage.setItem("accessToken", token );
         // console.log("Getting AccessToken", localStorage.getItem("accessToken"));
-        resolve("Yay")
+        resolve(resServer)
       })
       .catch(err =>{
           console.log(err)
@@ -63,14 +63,7 @@ export default {
         email: signUpRequest.email,
         password: signUpRequest.password
       });
-      // .then( (response) => {
-            
-      //   let token = response.data.access;
-      //   localStorage.setItem("SavedToken", 'Bearer ' + token);
-      //   axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-      //   (this.$router.push({name:'HomePage'}));
-        
-      // })
+    
     },
     getCreatorProfile: function() {
       var retrieveTokenSession = localStorage.getItem("accessToken");
@@ -78,10 +71,13 @@ export default {
       return axios.get(`${BASEURL}/user/profile?secret_token=${retrieveTokenSession}`);
     },
 
-    // getBaseBreedsList: function() {
-    //   return axios.get("https://dog.ceo/api/breeds/list");
-    // }
+    logoutSession: function(){
+      localStorage.removeItem("accessToken");
+      return "logged out"
+    }
+  
 
 
-  };
+
+};
   

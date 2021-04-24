@@ -13,4 +13,10 @@ router.get(
   }
 );
 
+router.delete(
+  "/logout",
+  
+  
+)
+
 module.exports = router;
