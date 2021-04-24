@@ -25,7 +25,11 @@ module.exports = {
     create: function(req, res) {
       db.Show
         .create(req.body)
-        .then(dbModel => res.json(dbModel))
+        .then(dbShow => {
+          User.findOneAndUpdate({ email: req.user.email}, {$push:  {shows: dbShow._id }}, { new: true })
+          .then(dbModel => res.json(dbModel))
+          
+        })
         .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
