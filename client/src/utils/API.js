@@ -84,9 +84,9 @@ export default {
     },
 
     logoutSession: function(){
-      return new Promise((res, rej) => {
+      return new Promise((resolve, rej) => {
         localStorage.removeItem("accessToken");
-        res("logged out")
+        resolve ("logged out")
       })
       
     }
