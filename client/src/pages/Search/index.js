@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { useCallback, useState, Component } from 'react';
+import Fuse from 'fuse.js';
+import { debounce } from 'throttle-debounce';
 import API from "../../utils/API";
 import axios from 'axios';
-import Fuse from 'fuse.js';
 import CardContainer from '../../components/CardContainer';
 import CardAll from '../../components/CardsAll';
 
@@ -33,24 +34,32 @@ export default class Search extends Component {
     ]
   }) */
 
-/* 
+
   handleInputChange = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
-    this.setState({
-      [name]: value
-    });
-  }; */
+  this.state.searchTerm = e.target.value
+  this.setState({ searchTerm: this.state.searchTerm})
+  console.log(searchTerm)
+  };
 
-
+/* 
   handleInputChange = (e) => {
     this.state.searchTerm = e.target.value
     const results = this.fuse(this.state.searchTerm)
     this.setState({ searchResults: results })
     console.log(results)
-  }
 
-  searchAllShows = query => {
+
+     const value = e.target.value;
+    const name = e.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
+  }
+   */
+
+
+/*   searchAllShows = query => {
     API.search(query)
       .then(res => this.setState({ searchShows: res.data }))
       .catch(err => console.log(err));
@@ -61,11 +70,24 @@ export default class Search extends Component {
     e.preventDefault();
     this.searchAllShows(this.state.searchTerm);
   };
+ 
+  filter(e){
+    e.preventDefault();
+    this.setState({ searchTerm: e.target.value})
+  }
 
-
+  let shows = this.state.searchShows;  
+  if(this.state.searchTerm){
+  shows = shows.filter( show =>
+    show.eventName.toLowerCase()
+    .includes(this.state.searchTerm.toLowerCase()) || show.eventName.toLowerCase()
+    .includes(this.state.searchTerm.toLowerCase()) ) 
+  }  
+ */
 
   render() {
-  
+ 
+
     return (
         <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">
       <div className="p-8">

@@ -9,7 +9,7 @@ router.route("/")
 router.route("/today")
   .post(showController.findByToday)
 
-// Matches with "/api/books/:id"
+// Matches with "/api/shows/:id"
 router
   .route("/:id")
   .get(showController.findById)

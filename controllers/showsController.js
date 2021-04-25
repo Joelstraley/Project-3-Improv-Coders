@@ -18,7 +18,6 @@ module.exports = {
     findById: function(req, res) {
       db.Show
         .findById(req.params.id)
-        //// - Could be FindbyDate(date.now())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

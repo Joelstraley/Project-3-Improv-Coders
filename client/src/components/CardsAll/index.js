@@ -31,8 +31,6 @@ export default class CardAll extends Component {
                   </p>
               </div>
           </div> 
-          
-          
               {this.state.shows.map(show => {
           return (
               <div className="grid grid-cols-5 grid-rows-3 gap-x-2 gap-y-1">     
@@ -46,8 +44,8 @@ export default class CardAll extends Component {
                               <a href={show.eventLink} className="text-purple-600 hover:text-purple-500 underline text-sm">{show.eventLink}</a>
                   </div>
                   hs full = full card  
-                   
           */
+
       <div className="grid grid-cols-5 gap-4" id="app" >
         <h3 className="inline col-span-5 text-black-500 font-bold">All Shows</h3>
         {this.state.shows.map(show => {
