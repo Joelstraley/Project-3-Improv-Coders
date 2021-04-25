@@ -12,11 +12,9 @@ export default class CardContainer extends Component {
         return (
 
             <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex items-center justify-center">
-                {/*     <CardsToday />
-                   <CardsAll /> */}
                 <CardsToday />
                 <CardsFuture />
-                <CardsToday />
+             
             </div>
 
         )

@@ -48,8 +48,9 @@ export default class CardsFuture extends Component {
 
   render() {
     return (
-      <div className="grid grid-cols-5 gap-4" id="app" >
+      <div>
         <h3 className="col-span-5 text-black-500 font-bold">Future Shows</h3>
+        <div className="grid grid-cols-5 gap-4" id="app" >
         {this.state.futureShows.map(show => {
           return (
             <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
@@ -59,10 +60,11 @@ export default class CardsFuture extends Component {
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
                 <p className="text-white mb-2 item truncate ...">{show.date}</p>
-                <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
+                <a href="#"  className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
               </div>
             </div>)
         })}
+      </div>
       </div>
     )
   };

@@ -40,8 +40,10 @@ export default class CardsToday extends Component {
     render(){   
         const day = dayjs(Date.now()).format('MM/DD') 
     return (
-        <div >
-        <h3 className="col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>        
+    
+    <div > 
+        <h3 className="col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>   
+        <div className="grid grid-cols-5 gap-4" id="app">
          {this.state.shows.map(show => { return (  
               <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
                   <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
@@ -53,6 +55,8 @@ export default class CardsToday extends Component {
                   </div>
           </div>)})}
       </div>
+      </div> 
+   
         
 
 

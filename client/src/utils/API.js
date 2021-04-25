@@ -30,6 +30,7 @@ export default {
      
     })
     },
+
     postShowData: function(showData) {
       var retrieveTokenSession = localStorage.getItem("accessToken");
       console.log("Getting AccessToken", retrieveTokenSession);
@@ -59,10 +60,14 @@ export default {
       });
     },
 
-   /*  search: function(query) {
+    getSingleShowData: function(id) {
+      return axios.get(`${BASEURL}/api/shows/` +  id);
+    },
+
+    /* search: function(query) {
       return axios.get(`${BASEURL}/api/shows?q` + query);
-      }, */
-  
+      },  */
+
 
     postSignUpRequest: function(signUpRequest) {
       return axios.post(`${BASEURL}/api/users/signupPassport`, {
@@ -86,8 +91,5 @@ export default {
       
     }
   
-
-
-
 };
   
