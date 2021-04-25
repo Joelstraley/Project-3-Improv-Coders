@@ -23,11 +23,20 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
+      console.log(req.body)
+      console.log("attempting create show in db")
       db.Show
-        .create(req.body)
-        .then(dbShow => {
-          User.findOneAndUpdate({ email: req.user.email}, {$push:  {shows: dbShow._id }}, { new: true })
-          .then(dbModel => res.json(dbModel))
+      .create(req.body)
+      .then(dbShow => {
+        console.log(dbShow)
+        console.log("attempting to add show to the account holder")
+          db.User.findOneAndUpdate({ email: req.user.email}, {$push:  {shows: dbShow._id }}, { new: true })
+          .then(dbModel => {
+            console.log(dbModel)
+            console.log("=================")
+
+            res.json(dbModel)
+          })
           
         })
         .catch(err => res.status(422).json(err));

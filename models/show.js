@@ -12,7 +12,11 @@ const showSchema = new Schema({
   date: { type: Date, default: Date.now, required: true},
   startTime: String,
   endTime: String,  
-  cost: { type: Number, min: 0}
+  cost: { type: Number, min: 0},
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 
