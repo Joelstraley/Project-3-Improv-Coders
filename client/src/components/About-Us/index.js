@@ -2,26 +2,42 @@ import React from 'react';
 const Gillian = './assets/gillian.jfif';
 const Kofi = './assets/kofi.jpg';
 const Joel = "./assets/Joel.jfif";
+const linkedin = "./assets/linkedin.png"
+const resume = "./assets/resumeicon.png"
+const gitlogo = "./assets/gitlogo.png"
 
 export default function AboutUs() {
     return (
-        <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <h1 className="py-10"> Meet the Improv Masters Team</h1>
-            <div className="max-w-8xl flex justify-around py-10 mx-15">
-                <div className="imageGillian"><img src={Gillian} className="w-72 h-72 rounded-full mx-auto" alt="this is Gillian's image" />
-                    <text className="my-4"> Gillian Fitzgerald </text>
+        <div className="bg-gradient-to-r from-blue-100 to-blue-300 p-10">
+            <h1 className="flex justify-center text-2xl font-bold md:text-4xl"> Meet the Improv Masters Team </h1>
 
+            <div className="flex justify-between py-10 mx-15">
+                <div className="imageGillian rounded-2xl border-4 border-solid border-gray-700 hover:bg-blue-300 p-5"><img
+                    src={Gillian}" className="h-72 rounded-2xl mx-auto" alt="this is Gillian's image" />
+                    <p className="flex justify-center my-4 font-bold font-serif text-lg "> Gillian Fitzgerald </p>
+                    <div className="flex justify-center">
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={gitlogo} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={linkedin} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={resume} />
+                    </div>
                 </div>
 
-                <div className="imageKofi"><img src={Kofi} className="w-72 h-72 rounded-full mx-auto" alt="this is Kofi's image" />
-                    <text className="my-4"> Kofi Hayford </text>
-
+                <div className="imageKofi rounded-2xl border-4 border-solid border-gray-700 hover:bg-blue-300 p-5"><img src={Kofi} className="h-72 rounded-2xl  mx-auto" alt="this is Kofi's image" />
+                    <p className="flex justify-center my-4 font-bold font-serif text-lg"> Kofi Hayford </p>
+                    <div className="flex justify-center">
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={gitlogo} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={linkedin} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={resume} />
+                    </div>
                 </div>
-                <div className="imageJoel"><img src={Joel} className="w-72 h-72 rounded-full mx-auto" alt="this is Joel's image" />
-                    <text className="my-4"> Joel Straley </text>
 
+                <div className="imageJoel rounded-2xl border-4 border-solid border-gray-700 hover:bg-blue-300 p-5"><img src={Joel} className="h-72 rounded-2xl mx-auto" alt="this is Joel's image" />
+                    <p className="flex justify-center my-4 font-bold font-serif text-lg"> Joel Straley </p>
+                    <div className="flex justify-center">
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={gitlogo} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={linkedin} />
+                        <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={resume} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <Navbar />
+
             </div>
         )
     }

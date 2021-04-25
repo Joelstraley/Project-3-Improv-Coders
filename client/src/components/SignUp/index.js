@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import API from "../../utils/API.js";
 
 export default class SignUp extends Component {
@@ -17,16 +17,16 @@ export default class SignUp extends Component {
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
         const { name, value } = event.target;
-    
+
         // Updating the input's state
         this.setState({
-          [name]: value
+            [name]: value
         });
     };
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-    
+
         // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
         console.log(`Hello ${this.state.email} ${this.state.password}`);
         console.log(this.state)
@@ -35,65 +35,65 @@ export default class SignUp extends Component {
         //   password: ""
         // });
         API.postSignUpRequest(this.state)
-        .then(res => {
-            if(res.status === 200){
-                const userLogin = {
-                    email: this.state.email,
-                    password: this.state.password
+            .then(res => {
+                if (res.status === 200) {
+                    const userLogin = {
+                        email: this.state.email,
+                        password: this.state.password
+                    }
+                    API.postLoginRequest(userLogin)
+                        .then(res => {
+                            console.log(res.data.token)
+                            const token = res.data.token;
+                            API.getCreatorProfile(token)
+                                .then(res => {
+                                    console.log("hello");
+                                    console.log(res);
+                                    if (res.status === 200) {
+                                        this.setState({
+                                            redirect: "/creatorPage"
+                                        })
+                                    }
+
+                                })
+                        })
                 }
-                API.postLoginRequest(userLogin)
-                .then(res =>{
-                    console.log(res.data.token)
-                    const token = res.data.token;
-                    API.getCreatorProfile(token)
-                    .then(res=>{
-                        console.log("hello");
-                        console.log(res);
-                        if(res.status === 200){
-                            this.setState({
-                                redirect: "/creatorPage"
-                            })
-                        }
-                        
-                    })
-                })
-            }
-            // console.log(res)
-        });
+                // console.log(res)
+            });
     };
     render() {
-        if(this.state.redirect){
-            return < Redirect to = {this.state.redirect} />
+        if (this.state.redirect) {
+            return < Redirect to={this.state.redirect} />
         }
         return (
-            <div className="login-wrapper">
-            <h1>Register Your Creator Account Now!</h1>
-            <form>
-                <label>
-                <p>Email</p>
-                <input
-                    value={this.state.email}
-                    name="email"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                </label>
-                <label>
-                <p>Password</p>
-                <input
-                
-                    value={this.state.password}
-                    name="password"
-                    onChange={this.handleInputChange}
-                    type="password"
-                    placeholder="Password"
-                />
-                </label>
-                <div>
-                <button onClick={this.handleFormSubmit}>SignUp</button>
-                </div>
-            </form>
+            <div className="login-wrapper container justify-center">
+                <h1>Register Your Creator Account Now!</h1>
+                <form>
+                    <label>
+                        <p>Email</p>
+                        <input
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Email Address"
+                        />
+                    </label>
+                    <label>
+                        <p>Password</p>
+                        <input
+
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleInputChange}
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </label>
+                    <div>
+                        <button onClick={this.handleFormSubmit}>SignUp</button>
+                    </div>
+                </form>
             </div>
         )
     }

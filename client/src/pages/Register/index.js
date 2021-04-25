@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar/index.js"
 export default class Register extends Component {
     render() {
         return (
-            <div>
+            <div >
                 <Navbar />
                 <SignUp />
             </div>
