@@ -10,6 +10,7 @@ import Form from "./pages/Form";
 import Search from "./pages/Search";
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/" component={HomePage} /> 
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
+      {/* <Route exact path="/accountLogin" component= {} /> */} 
       <Route exact path="/creatorPage" component= {CreatorPage} />
       <Route exact path="/form" component= {Form} />
       <Route exact path="/search" component= {Search} />

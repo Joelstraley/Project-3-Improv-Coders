@@ -8,7 +8,8 @@ router.get(
   (req, res, next) => {
     User.findOne({ email: req.user.email}).populate('shows').then(({shows}) => {
       console.log("Populated User " + shows);
-
+      console.log(shows);
+      console.log("get route to / profile");
       res.json({
         message: 'You made it to the secure route',
         user: req.user,
