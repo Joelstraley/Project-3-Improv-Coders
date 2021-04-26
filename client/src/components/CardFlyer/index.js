@@ -77,3 +77,5 @@ export default class CardFlyer extends Component {
       })}    
       </div>
       )
+    };
+  }
