@@ -12,7 +12,8 @@ export default class CreatorPage extends Component {
         super(props)
         this.state = {
             user: null,
-            userShows: []
+            userShows: [],
+            displayForm: false
             
         }
        
@@ -27,13 +28,22 @@ export default class CreatorPage extends Component {
         
 
     }
+    toggleForm = () => {
+        console.log("please toggle")
+        this.setState({
+            displayForm: !this.state.displayForm
+        })
+    }
     render() {
         return (
 
             <div>
                 <NavBar />
                 <h1> Hi {this.state.user ? this.state.user.email: null} ! This is your Creator Page!</h1>
-                <FormComponent />
+                <button onClick= {this.toggleForm}>Click to Create An Event!</button>
+                {this.state.displayForm ? <FormComponent />: ""}
+                {this.state.displayForm ? <button onClick= {this.toggleForm}>Hide Form!</button>: ""}
+                <br/>
                 <br/>
                 {this.state.user ? <MemberPageComponent userShows={this.state.userShows} />: <h1>Refresh Browser</h1>}
                 
