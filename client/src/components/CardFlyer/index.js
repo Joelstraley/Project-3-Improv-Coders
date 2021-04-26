@@ -71,9 +71,11 @@ export default class CardFlyer extends Component {
         -----This is in the A Href link of the Card*/}
        
       {/* back to main LINK */}
-            </div>
+      </div>
             </div>
           )
       })}    
       </div>
       )
+    };
+  }
