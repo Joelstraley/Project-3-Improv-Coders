@@ -26,6 +26,8 @@ function App() {
       <Route exact path="/form" component= {Form} />
       <Route exact path="/search" component= {Search} />
       <Route exact path="/show/:id" component= {EventPage}   /> 
+
+    
       {/* in case there is a route that is not clearly defined, this route will direct the user back to  the home page */}
       <Route path="*" component={HomePage} />
       {/* <Route exact path="/cont" component={Form} /> */}  

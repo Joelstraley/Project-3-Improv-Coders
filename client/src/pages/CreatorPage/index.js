@@ -11,7 +11,8 @@ export default class CreatorPage extends Component {
     constructor(props){
         super(props)
         this.state = {
-            user: null
+            user: null,
+            userShows: []
             
         }
        
@@ -21,7 +22,7 @@ export default class CreatorPage extends Component {
         .then(res=>{
             console.log("hello");
             console.log(res);
-            this.setState({user: res.data.user})
+            this.setState({user: res.data.user, userShows: res.data.userShows})
         })
         
 
@@ -31,12 +32,11 @@ export default class CreatorPage extends Component {
 
             <div>
                 <NavBar />
-                {this.state.user ? <MemberPageComponent email= {this.state.user.email} />: <h1>loading</h1>}
+                <h1> Hi {this.state.user ? this.state.user.email: null} ! This is your Creator Page!</h1>
                 <FormComponent />
                 <br/>
-                {/* <CardsToday /> */}
-                <br/>
-                <CardsAll />
+                {this.state.user ? <MemberPageComponent userShows={this.state.userShows} />: <h1>Refresh Browser</h1>}
+                
             </div>
         )
     }
