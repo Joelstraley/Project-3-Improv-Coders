@@ -15,8 +15,26 @@ export default class FormComponent extends Component {
     description: "",
     eventLink: "",
     eventImage: "",
-    cost: ""
+    cost: "",
+    successMessage: false,
   };
+
+  clearForm= () =>{
+    this.setState({
+      eventName: "",
+      eventPlace: "",
+      eventType: "",
+      performers: "",
+      date: "",
+      startTime: "",
+      endTime: "",
+      description: "",
+      eventLink: "",
+      eventImage: "",
+      cost: ""
+    })
+    
+  }
 
 
   handleInputChange = event => {
@@ -35,6 +53,8 @@ export default class FormComponent extends Component {
     API.postShowData(this.state)
       .then(res => {
         console.log("this is show state", res);
+        this.clearForm();
+        this.setState({successMessage: true});
       });
   };
 
@@ -178,7 +198,9 @@ export default class FormComponent extends Component {
               className='text-2xl text-white font-semibold drop-shadow-md py-4 px-8 rounded-xl shadow-lg submit'
               onClick={this.handleFormSubmit}>Submit</button>
           </div>
+
         </form>
+        {this.state.successMessage ? <h1>Successfully Created Your Event! Refresh to View! </h1>: ""}
       </div>
     )
   }

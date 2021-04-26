@@ -8,6 +8,8 @@ export default function Navbar() {
     
     const logoutBtn = () => {
         localStorage.removeItem("accessToken");
+        localStorage.removeItem("userEmail");
+        
         console.log("logged out")
         // API.logoutSession()
         // .then(res => {

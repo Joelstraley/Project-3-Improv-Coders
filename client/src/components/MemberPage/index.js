@@ -10,7 +10,7 @@ export default class MemberPageComponent extends Component {
             <div>
                 
                 <div className="grid grid-cols-5 gap-4" id="app" >
-                <h3 className="inline col-span-5 text-black-500 font-bold">All Shows</h3>
+                <h3 className="inline col-span-5 text-black-500 font-bold">Your Shows</h3>
                 {this.props.userShows.map(show => {
                 return (
                     <div className="inline rounded-lg shadow-lg content-center text-sm md:text-sm lg:text" id="fullCard" key={show._id} >
