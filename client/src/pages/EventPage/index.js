@@ -19,8 +19,9 @@ export default function index() {
     return (
         <div>
             <Navbar />
-                {id}
-            {event ? <CardFlyer show = {event.data} />: "" }
+                {id} 
+                {/* <h1>{event.data.eventName}</h1> */}
+            {/* {event ? <CardFlyer show = {event.data} />: "" } */}
         </div>
     )
 }

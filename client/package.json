@@ -13,7 +13,6 @@
     "postcss": "^7.0.35",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"

@@ -42,7 +42,8 @@ export default class CardFlyer extends Component {
     return (
 
       <div> 
-        <h1>{this.props.show.eventName}</h1>
+        {/* <h1>{this.props.show.eventName}</h1> */}
+        
         
       </div>
     )
