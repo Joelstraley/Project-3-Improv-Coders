@@ -28,6 +28,8 @@ export default function Navbar() {
 
             <Link to="/"></Link>
 
+            <Link to="/"></Link>
+
             <Link to="/accountRegister"></Link>
 
             <Link to="/accountLogin"></Link>
