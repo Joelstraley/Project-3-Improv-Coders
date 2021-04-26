@@ -26,7 +26,7 @@ export default class Search extends Component {
 
   
 
-  handleInputChange = (e) => {
+/*   handleInputChange = (e) => {
     this.state.searchTerm = e.target.value
     fuse = new Fuse(this.state.shows, {
       keys: [
@@ -41,7 +41,7 @@ export default class Search extends Component {
     this.setState({ searchResults: results })
     console.log(results)
   }
-
+ */
 
   render() {
 

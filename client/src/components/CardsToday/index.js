@@ -6,62 +6,59 @@ import "./style.css";
 
 export default class CardsToday extends Component {
     state = {
-      shows: []
-      };
+        shows: []
+    };
 
-     componentDidMount = () => {
+    componentDidMount = () => {
         var now = dayjs(Date.now()).format('YYYY-MM-DD')
-        API.getTodaysShowData(now).then((response) =>{
+        API.getTodaysShowData(now).then((response) => {
             console.log(response, "this is the date",);
             let data = response.data;
             this.setState({ shows: data })
-        }) 
-            .catch(() =>{
+        })
+            .catch(() => {
                 console.log("error with Today's date")
             });
-     };
-    
-        /*  <div>
-            <div className="p-20 bg-purple-100 w-mid md:w-1/2"><h2></h2>
-             <h3 className="text-purple-300 font-bold mb-4">{this.date}</h3>
-               {this.state.shows.map(show => { return (  
-                    <div className="bg-white rounded-lg shadow-lg" key={show._id}>
-                        <img src={show.eventImage} alt="" className="rounded-t-lg w-small" id="cardImage" ></img>
-                        <div className="p-6">
-                        <h2 className="font-bold mb-2 text-2xl text-purple-800">{show.eventName}</h2>
-                        <p className="text-purple-700 mb-2">{show.description}</p>
-                        <a href={show.eventLink} className="text-purple-600 hover:text-purple-500 underline text-sm">{show.eventLink}</a>
-                        </div>
-                </div>)})}
+    };
+
+    /*  <div>
+        <div className="p-20 bg-purple-100 w-mid md:w-1/2"><h2></h2>
+         <h3 className="text-purple-300 font-bold mb-4">{this.date}</h3>
+           {this.state.shows.map(show => { return (  
+                <div className="bg-white rounded-lg shadow-lg" key={show._id}>
+                    <img src={show.eventImage} alt="" className="rounded-t-lg w-small" id="cardImage" ></img>
+                    <div className="p-6">
+                    <h2 className="font-bold mb-2 text-2xl text-purple-800">{show.eventName}</h2>
+                    <p className="text-purple-700 mb-2">{show.description}</p>
+                    <a href={show.eventLink} className="text-purple-600 hover:text-purple-500 underline text-sm">{show.eventLink}</a>
+                    </div>
+            </div>)})}
+        </div>
+    </div>  const day = dayjs(Date.now()).format('MM/DD') 
+    className="grid grid-cols-5 gap-4" id="app" */
+
+    render() {
+        const day = dayjs(Date.now()).format('MM/DD')
+        return (
+            <div className="p-8">
+                <div className="grid grid-cols-5 gap-4" id="app">
+                <h3 className="inline col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>
+                    {this.state.shows.map(show => {
+                        return (
+                            <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
+                                <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
+                                <div className="p-6">
+                                    <h2 className="font-bold mb-2 text-white text-sm md:text-med item flex flex-wrap content-center">{show.eventName}</h2>
+                                    <p className="text-white mb-2 item truncate ...">{show.description}</p>
+                                    <p className="text-white mb-2 item truncate ...">${show.cost}</p>
+                                    <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
+                                </div>
+                            </div>)
+                    })}
+                </div>
             </div>
-        </div>  const day = dayjs(Date.now()).format('MM/DD') 
-        className="grid grid-cols-5 gap-4" id="app" */
-      
-    render(){   
-        const day = dayjs(Date.now()).format('MM/DD') 
-    return (
-    
-    <div > 
-        <h3 className="col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>   
-        <div className="grid grid-cols-5 gap-4" id="app">
-         {this.state.shows.map(show => { return (  
-              <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
-                  <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
-                  <div className="p-6">
-                  <h2 className="font-bold mb-2 text-white text-sm md:text-med item flex flex-wrap content-center">{show.eventName}</h2>
-                  <p className="text-white mb-2 item truncate ...">{show.description}</p>
-                  <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                  <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
-                  </div>
-          </div>)})}
-      </div>
-      </div> 
-   
-        
 
-
-
-          )
-        };
+        )
+    };
 };
 
