@@ -3,6 +3,8 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
+const db = require("../../models");
+
 
 // Matches with "/api/shows"
 // router.route("/users")
@@ -50,7 +52,7 @@ router.post(
               const body = { _id: user._id, email: user.email };
               const token = jwt.sign({ user: body }, 'TOP_SECRET');
 
-              return res.json({ token });
+              return res.json({ token, email: user.email});
             }
           );
         } catch (error) {
@@ -60,6 +62,7 @@ router.post(
     )(req, res, next);
   }
 );
+
 
 
 router.delete(

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from "../../utils/API";
+import CardFlyer from '../CardFlyer'
 import axios from 'axios';
 import "./style.css";
+
 
 export default class CardAll extends Component {
   state = {
@@ -51,7 +53,7 @@ export default class CardAll extends Component {
         <h3 className="inline col-span-5 text-black-500 font-bold">All Shows</h3>
         {this.state.shows.map(show => {
           return (
-            <div className="inline rounded-lg shadow-lg content-center text-sm md:text-sm lg:text" id="fullCard" key={show._id}>
+            <div className="inline rounded-lg shadow-lg content-center text-sm md:text-sm lg:text" id="fullCard" key={show._id} >
               <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
               <div className="p-6">
                 <h2 className="font-bold mb-2 text-2xl text-white item flex flex-wrap content-center">{show.eventName}</h2>
