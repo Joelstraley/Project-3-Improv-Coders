@@ -5,6 +5,24 @@ const NavbarImage = './assets/ComedyStream.png';
 
 
 export default function Navbar() {
+    
+    const [redirect, setRedirect] = useState(null);
+    
+    const logoutBtn = () => {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("userEmail");
+        
+        console.log("logged out")
+        // API.logoutSession()
+        // .then(res => {
+        //     console.log(res)
+        //     if(res.status === 200){
+        //         console.log("hello")
+                setRedirect(
+                    "/accountLogin"
+                )
+        //     }
+        // })
 
     // const [redirect, setRedirect] = useState({destination:null});
 
@@ -21,9 +39,11 @@ export default function Navbar() {
     //         }
     //     })
 
-    // }
+    }
     return (
         <div>
+            {redirect ? < Redirect to = {redirect} /> : "" }
+    
             {/* {redirect.destination ? < Redirect to = {redirect.destination} /> : "nope" } */}
 
             <Link to="/"></Link>

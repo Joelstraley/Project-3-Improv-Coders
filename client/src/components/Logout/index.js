@@ -6,8 +6,8 @@ export default class Logout extends Component {
         redirect: false,
     };
     componentDidMount() {
-        sessionStorage.setItem("userToken", '');
-        sessionStorage.clear();
+        // sessionStorage.setItem("userToken", '');
+        // sessionStorage.clear();
         this.setState({ redirect: true });
     }
 

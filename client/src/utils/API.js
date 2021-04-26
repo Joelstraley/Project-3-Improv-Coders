@@ -20,6 +20,8 @@ export default {
           const token = resServer.data.token;
           console.log(token)
           localStorage.setItem("accessToken", token );
+          localStorage.setItem("userEmail", resServer.data.email );
+          
           // console.log("Getting AccessToken", localStorage.getItem("accessToken"));
           resolve(resServer)
         })
@@ -49,6 +51,8 @@ export default {
         eventPlace: showData.eventPlace
       });
     },
+
+    
 
     getAllShowData: function() {
       return axios.get(`${BASEURL}/api/shows`)
@@ -89,7 +93,14 @@ export default {
         resolve ("logged out")
       })
       
-    }
+    },
+    getAllCreatorShows: function() {
+      const creatorEmail= localStorage.getItem("userEmail");
+      return axios.get(`${BASEURL}/api/users/allshows/${creatorEmail}`);
+      // var retrieveTokenSession = localStorage.getItem("accessToken");
+      // console.log("Getting AccessToken", retrieveTokenSession);
+      // return axios.get(`${BASEURL}/secure/createshow?secret_token=${retrieveTokenSession}`, {}
+    },
   
 };
   

@@ -48,9 +48,9 @@ export default class CardsFuture extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="col-span-5 text-black-500 font-bold">Future Shows</h3>
+      <div className="p-8">
         <div className="grid grid-cols-5 gap-4" id="app" >
+        <h3 className="inline col-span-5 text-black-500 font-bold">Future Shows</h3>
         {this.state.futureShows.map(show => {
           return (
             <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>

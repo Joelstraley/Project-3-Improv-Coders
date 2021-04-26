@@ -5,6 +5,7 @@ import CardsAll from '../../components/CardsAll';
 import CardsFuture from "../../components/CardsFuture";
 import Search from '../../components/Search';
 import FormComponent from "../../components/Form";
+import CardFlyer from '../../components/CardFlyer';
 
 
 
