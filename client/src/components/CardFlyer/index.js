@@ -4,9 +4,9 @@ import "./style.css";
 
 export default class CardFlyer extends Component {
 
-  state = {
-    show: {}
-  };
+  // state = {
+  //   show: {}
+  // };
 
 /* ///shows/:id - GET User 
 ///app.get('/profile/:id', (req, res) => {
@@ -38,11 +38,12 @@ export default class CardFlyer extends Component {
 
 
 
-    render(){    
+    render(props){    
     return (
 
-      <div>
-        Hello World
+      <div> 
+        <h1>{this.props.show.eventName}</h1>
+        
       </div>
     )
   }

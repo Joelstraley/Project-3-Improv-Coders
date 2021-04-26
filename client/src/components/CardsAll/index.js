@@ -4,6 +4,7 @@ import CardFlyer from '../CardFlyer'
 import axios from 'axios';
 import "./style.css";
 
+
 export default class CardAll extends Component {
   state = {
     shows: []
@@ -57,9 +58,9 @@ export default class CardAll extends Component {
                 <h2 className="font-bold mb-2 text-2xl text-white item flex flex-wrap content-center">{show.eventName}</h2>
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ..." onClick={() => 
-                {/* {redirect ? < Redirect to ="/shows/:id" /> : "" } Perform a redirect here. In the show component for the 
-                specific card, in the componentdidMount, perform a backend call with the id from the url */}}>See More </a>
+                <Link to ="#" className="text-white hover:text-black-500 underline text-sm item truncate ..." >{show._id}Hello </Link>
+                 {/* {redirect ? < Redirect to ="/shows/:id" /> : "" } Perform a redirect here. In the show component for the  */}
+                {/* specific card, in the componentdidMount, perform a backend call with the id from the url */}
               </div>
             </div>)
         })}
