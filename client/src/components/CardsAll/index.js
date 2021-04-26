@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from "../../utils/API";
 import CardFlyer from '../CardFlyer'
 import axios from 'axios';
@@ -47,7 +48,7 @@ export default class CardAll extends Component {
                   </div>
                   hs full = full card  
           */
-
+       <div className="p-8">    
       <div className="grid grid-cols-5 gap-4" id="app" >
         <h3 className="inline col-span-5 text-black-500 font-bold">All Shows</h3>
         {this.state.shows.map(show => {
@@ -58,13 +59,15 @@ export default class CardAll extends Component {
                 <h2 className="font-bold mb-2 text-2xl text-white item flex flex-wrap content-center">{show.eventName}</h2>
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                <Link to ="#" className="text-white hover:text-black-500 underline text-sm item truncate ..." >{show._id}Hello </Link>
-                 {/* {redirect ? < Redirect to ="/shows/:id" /> : "" } Perform a redirect here. In the show component for the  */}
-                {/* specific card, in the componentdidMount, perform a backend call with the id from the url */}
-              </div>
+                <Link className="text-white hover:text-black-500 underline text-sm item truncate ..." 
+                to={"/shows/" + show._id}>
+                     See More 
+                    </Link>
+                    </div>
             </div>)
         })}
       </div>
+      </div> 
     )
   };
 };
