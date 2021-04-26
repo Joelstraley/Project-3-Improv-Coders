@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import CardFlyer from '../CardFlyer'
 import axios from 'axios';
 import "./style.css";
 
@@ -50,13 +51,13 @@ export default class CardAll extends Component {
         <h3 className="inline col-span-5 text-black-500 font-bold">All Shows</h3>
         {this.state.shows.map(show => {
           return (
-            <div className="inline rounded-lg shadow-lg content-center text-sm md:text-sm lg:text" id="fullCard" key={show._id}>
+            <div className="inline rounded-lg shadow-lg content-center text-sm md:text-sm lg:text" id="fullCard" key={show._id} >
               <img src={show.eventImage} alt="" className="rounded-t-lg w-small item" id="cardImage" ></img>
               <div className="p-6">
                 <h2 className="font-bold mb-2 text-2xl text-white item flex flex-wrap content-center">{show.eventName}</h2>
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
+                <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ..." onClick={() => {/* {redirect ? < Redirect to ="/shows/asdjkvasdkjvnaksdjvbqiwue" /> : "nope" } Perform a redirect here. In the show component for the specific card, in the componentdidMount, perform a backend call with the id from the url */}}>See More </a>
               </div>
             </div>)
         })}

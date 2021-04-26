@@ -4,25 +4,26 @@ import API from "../../utils/API.js";
 
 export default function Navbar() {
     
-    // const [redirect, setRedirect] = useState({destination:null});
+    const [redirect, setRedirect] = useState(null);
     
-    // const logoutBtn = () => {
-    //     console.log("logged out")
-    //     API.logoutSession()
-    //     .then(res => {
-    //         console.log(res)
-    //         if(res.status === 200){
-    //             console.log("hello")
-    //             setRedirect(
-    //                 "/accountLogin"
-    //             )
-    //         }
-    //     })
+    const logoutBtn = () => {
+        localStorage.removeItem("accessToken");
+        console.log("logged out")
+        // API.logoutSession()
+        // .then(res => {
+        //     console.log(res)
+        //     if(res.status === 200){
+        //         console.log("hello")
+                setRedirect(
+                    "/accountLogin"
+                )
+        //     }
+        // })
 
-    // }
+    }
     return (
         <div>
-            {/* {redirect.destination ? < Redirect to = {redirect.destination} /> : "nope" } */}
+            {redirect ? < Redirect to = {redirect} /> : "" }
     
             <Link to="/">Home</Link>
             

@@ -41,7 +41,9 @@ export default class CardFlyer extends Component {
     render(){    
     return (
 
-      <div></div>
+      <div>
+        Hello World
+      </div>
     )
   }
 }

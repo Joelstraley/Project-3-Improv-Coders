@@ -50,6 +50,8 @@ export default {
       });
     },
 
+    
+
     getAllShowData: function() {
       return axios.get(`${BASEURL}/api/shows`)
     },
@@ -89,7 +91,13 @@ export default {
         resolve ("logged out")
       })
       
-    }
+    },
+    getAllCreatorShows: function() {
+      return axios.get(`${BASEURL}/api/shows/:id`);
+      // var retrieveTokenSession = localStorage.getItem("accessToken");
+      // console.log("Getting AccessToken", retrieveTokenSession);
+      // return axios.get(`${BASEURL}/secure/createshow?secret_token=${retrieveTokenSession}`, {}
+    },
   
 };
   

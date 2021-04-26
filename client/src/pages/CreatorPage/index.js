@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import MemberPageComponent from "../../components/MemberPage";
 import API from "../../utils/API";
 import NavBar from "../../components/Navbar";
-import FormComponent from "../../components/Form"
+import FormComponent from "../../components/Form";
+import CardsAll from "../../components/CardsAll";
+import CardsToday from "../../components/CardsToday"
 
 
 export default class CreatorPage extends Component {
@@ -31,6 +33,10 @@ export default class CreatorPage extends Component {
                 <NavBar />
                 {this.state.user ? <MemberPageComponent email= {this.state.user.email} />: <h1>loading</h1>}
                 <FormComponent />
+                <br/>
+                {/* <CardsToday /> */}
+                <br/>
+                <CardsAll />
             </div>
         )
     }
