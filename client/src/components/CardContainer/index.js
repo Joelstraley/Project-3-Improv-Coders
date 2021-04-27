@@ -10,10 +10,10 @@ export default class CardContainer extends Component {
 
         return (
 
-            <div className="pl-20 pr-20 bg-yellow-200 min-h-screen flex flex-wrap items-center content-around ">
-                <CardsToday />
+            <div className="pl-20 pr-20 bg-gradient-to-r from-blue-100 to-blue-300 min-h-screen flex flex-wrap items-center content-around ">
+              {/*   <CardsToday />
                 <CardsFuture />
-                <CardsAll />
+                <CardsAll /> */}
              
             </div>
 

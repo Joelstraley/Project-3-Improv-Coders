@@ -6,11 +6,11 @@ const carousel3 = "https://media.timeout.com/images/105411928/630/472/image.jpg"
 export default function Carousel() {
     return (
         <div className="App" style={{ width: "full", margin: "auto", padding: "50px" }}>
-            <Carousel arrows infinite>
+            <div className="flex">
                 <img src={carousel1} />
                 <img src={carousel2} />
                 <img src={carousel3} />
-            </Carousel>
+            </div>
         </div>
     );
 }

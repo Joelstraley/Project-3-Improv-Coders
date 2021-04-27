@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import Login from "../../components/Login/index.js"
-import Navbar from "../../components/Navbar/index.js"
+import React, { Component } from 'react';
+import Login from "../../components/Login/index.js";
+import Navbar from "../../components/Navbar/index.js";
+import Footer from "../../components/Footer";
+
 
 
 export default class LoginPage extends Component {
@@ -9,7 +11,7 @@ export default class LoginPage extends Component {
             <div>
                 <Navbar />
                 <Login />
-        
+                <Footer />
             </div>
         )
     }

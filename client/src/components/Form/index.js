@@ -61,7 +61,7 @@ export default class FormComponent extends Component {
 
   render() {
     return (
-      <div className="form wholeForm bg-yellow-200 p-20">
+      <div className="form wholeForm bg-gradient-to-r from-blue-100 to-blue-300  p-20">
         <form className="px-4 my-32 max-w-2xl mx-auto space-y-6">
           <h1 className='text-3xl font-semibold'>Create an Event</h1>
           <div>
