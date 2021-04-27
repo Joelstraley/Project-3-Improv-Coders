@@ -40,9 +40,9 @@ export default class CreatorPage extends Component {
             <div>
                 <NavBar />
                 <h1 className="flex justify-center bg-gradient-to-r from-blue-100 to-blue-300 p-10 border-b-2 text-indigo-900 text-xl"> Hi {this.state.user ? this.state.user.email : null} ! This is your Creator Page!</h1>
-                <div className="flex justify-center"> <button className="flex justify-center bg-blue-700 m-10 text-white text-2xl font-bold p-10 rounded-2xl border-4 border-solid border-gray-400 hover:bg-blue-300 hover:text-black hover:opacity-90 transition duration-500" onClick={this.toggleForm}>Click to Create An Event!</button></div>
+                <div className="flex justify-center"><button className="flex justify-center bg-blue-700 m-10 text-white text-2xl font-bold p-10 rounded-2xl border-4 border-solid border-gray-400 hover:bg-blue-300 hover:text-black hover:opacity-90 transition duration-500" onClick={this.toggleForm}>Click to Create An Event!</button></div>
                 {this.state.displayForm ? <FormComponent /> : ""}
-                {this.state.displayForm ? <button className="py-4 px-4 bg-blue-800 hover:bg-blue-500 text-white rounded mx-10 border-solid border-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 hover:shadow-inner shadow-2xl" onClick={this.toggleForm}>Hide Form!</button> : ""}
+                {this.state.displayForm ? <button className="flex justify-center py-4 px-4 bg-blue-800 hover:bg-blue-500 text-white rounded mx-10 border-solid border-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 hover:shadow-inner shadow-2xl" onClick={this.toggleForm}>Hide Form!</button> : ""}
                 <br />
                 <br />
                 {this.state.user ? <MemberPageComponent userShows={this.state.userShows} /> : <h1>Refresh Browser</h1>}
