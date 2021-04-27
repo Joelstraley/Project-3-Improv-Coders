@@ -36,6 +36,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "react-router": "^5.2.0",
     "throttle-debounce": "^3.0.1"
   }
 }

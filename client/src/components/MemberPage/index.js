@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from '../../utils/API';
 import Login from "../Login/index";
-import {Link} from "react-router-dom";
+
 
 export default class MemberPageComponent extends Component {
 

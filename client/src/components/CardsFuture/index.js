@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from "../../utils/API";
 import axios from 'axios';
 import dayjs from 'dayjs';
@@ -60,8 +61,11 @@ export default class CardsFuture extends Component {
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
                 <p className="text-white mb-2 item truncate ...">{show.date}</p>
-                <a href="#"  className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
-              </div>
+                <Link className="text-white hover:text-black-500 underline text-sm item truncate ..." 
+                to={"/shows/" + show._id}>
+                     See More 
+                    </Link>              
+                    </div>
             </div>)
         })}
       </div>

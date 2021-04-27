@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from "../../utils/API";
 import axios from 'axios';
 import dayjs from 'dayjs';
@@ -42,7 +43,7 @@ export default class CardsToday extends Component {
         return (
             <div className="p-8">
                 <div className="grid grid-cols-5 gap-4" id="app">
-                <h3 className="inline col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>
+                    <h3 className="inline col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>
                     {this.state.shows.map(show => {
                         return (
                             <div className="rounded-lg shadow-lg content-center" id="fullCard" key={show._id}>
@@ -51,7 +52,10 @@ export default class CardsToday extends Component {
                                     <h2 className="font-bold mb-2 text-white text-sm md:text-med item flex flex-wrap content-center">{show.eventName}</h2>
                                     <p className="text-white mb-2 item truncate ...">{show.description}</p>
                                     <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                                    <a href="#" className="text-white hover:text-black-500 underline text-sm item truncate ...">See More </a>
+                                    <Link className="text-white hover:text-black-500 underline text-sm item truncate ..."
+                                        to={"/shows/" + show._id}>
+                                        See More
+                    </Link>
                                 </div>
                             </div>)
                     })}
