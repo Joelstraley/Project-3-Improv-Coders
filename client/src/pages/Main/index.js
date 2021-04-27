@@ -18,7 +18,7 @@ export default class Main extends Component {
                 <NavBar />
                 <ComedyCarousel />
                 <h1 className="flex justify-center font-bold py-6 text-3xl text-indigo-900">  WELCOME TO COMEDYSTREAM!!  </h1>
-                <p className="flex pb-9 border-b-2 px-12 italic tracking-tight text-lg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                <p className="flex pb-9 border-b-2 px-12 italic tracking-tight text-lg"> The Central hub for all Online Comedy Events! Create an account to promote your event. Use Search to view all shows. Comedy Stream. YOU WILL BE ENTERTAINED!</p>
                 <CardsToday />
                 <CardsFuture />
                 <AboutUs />
