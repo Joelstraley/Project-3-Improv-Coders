@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Local run
-const BASEURL = "http://localhost:3001";
+const BASEURL = process.env.server_url || 'https://comedy-stream.herokuapp.com'
 // const BASEURL = "";
 
 export default {

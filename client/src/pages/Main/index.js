@@ -15,7 +15,7 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-         <NavBar /> 
+         <NavBar />
                 <Carousel arrows infinite /> 
                      <CardsToday /> 
                    <CardsFuture />
