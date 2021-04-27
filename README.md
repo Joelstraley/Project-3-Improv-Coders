@@ -18,16 +18,17 @@ SOON!
 
 
 ## <a name="Technologies">Technologies:</a>
--React
--MongoDB
--Express
--Node.js
--JSON Web Token
--Passport
--Bcrypt
--Days.js
--Tailwind CSS
--Fuse.js
+
+- React
+- MongoDB
+- Express
+- Node.js
+- JSON Web Token
+- Passport
+- Bcrypt
+- Days.js
+- Tailwind CSS
+- Fuse.js
 
 
 ## <a name="Team">Team:</a>
