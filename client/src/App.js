@@ -18,7 +18,7 @@ function App() {
 
       <Switch>
       {/* <Form /> */}
-      <Redirect exact from="/" to="/home" />
+    {/*   <Redirect exact from="/" to="/home" /> */}
       <Route exact path="/" component={Main} /> 
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />
