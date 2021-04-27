@@ -41,7 +41,7 @@ export default class CardsToday extends Component {
     render() {
         const day = dayjs(Date.now()).format('MM/DD')
         return (
-            <div className="p-8">
+            <div className="bg-gradient-to-r from-blue-100 to-blue-300 p-10 border-b-2 p-8">
                 <div className="grid grid-cols-5 gap-4" id="app">
                     <h3 className="inline col-span-5 text-black-500 font-bold">Shows Happening Today ({day})</h3>
                     {this.state.shows.map(show => {
