@@ -5,3 +5,4 @@ remote-repo/
 .module-cache
 .idea
 .vscode
+.env.local
