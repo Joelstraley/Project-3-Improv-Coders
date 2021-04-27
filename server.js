@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // CORS
-app.use(cors())
+app.use(cors({origin: process.env.origin_url}))
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
