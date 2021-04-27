@@ -7,11 +7,13 @@ const NavbarImage = './assets/ComedyStream.png';
 export default function Navbar() {
     
     const [redirect, setRedirect] = useState(null);
+    let user = localStorage.getItem("userLogin");
     
     const logoutBtn = () => {
         localStorage.removeItem("accessToken");
         localStorage.removeItem("userEmail");
-        
+        localStorage.removeItem("userLogin")
+
         console.log("logged out")
         // API.logoutSession()
         // .then(res => {
@@ -54,7 +56,7 @@ export default function Navbar() {
 
             <Link to="/accountLogin"></Link>
             {/* <Link to="/contactMe">Contact Me!</Link> */}
-            <button onClick= {logoutBtn}>Logout</button>
+            {user ? <button onClick= {logoutBtn}>Logout</button>: <div/>}
         {/*     <Link to= "/logout">Logout</Link>  */}
 
             <div className="bg-gradient-to-r from-blue-100 to-blue-300">
