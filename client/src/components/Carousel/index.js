@@ -24,7 +24,7 @@ export default function ComedyCarousel() {
                             }
                         },
                     ]}
-                    animationSpeed={500}>
+                    animationSpeed={1000}>
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel1} />
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel2} />
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel3} />
