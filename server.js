@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const session = require("express-session");
 const passport = require('passport');
 const passportlocal= require("passport-local").Strategy;
@@ -10,6 +11,7 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require("./models");
 const cors = require("cors");
+console.log(process.env.PORT, "this is the port")
 
 
 
