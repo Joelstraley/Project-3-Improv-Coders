@@ -3,7 +3,7 @@
 ## Description
 The main page shows a listing of Online Comedy Shows happening that day and another section for upcoming shows. The user can also Search through all show-listings. The user can register and login to submit a show. On their members page they can view all the previous shows they've posted. 
 
-[View Live Site](https://comedystream.herokuapp.com/)
+[View Live Site](https://comedy-stream.herokuapp.com/)
 
 ## Table of Contents
 
