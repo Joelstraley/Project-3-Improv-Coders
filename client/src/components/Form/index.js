@@ -55,6 +55,7 @@ export default class FormComponent extends Component {
         console.log("this is show state", res);
         this.clearForm();
         this.setState({successMessage: true});
+        window.location.reload();
       });
   };
 
