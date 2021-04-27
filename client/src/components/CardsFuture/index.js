@@ -60,7 +60,7 @@ export default class CardsFuture extends Component {
                 <h2 className="font-bold mb-2 text-white text-sm md:text-med item flex flex-wrap content-center">{show.eventName}</h2>
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
-                <p className="text-white mb-2 item truncate ...">{show.date}</p>
+                <p className="text-white mb-2 item truncate ...">{dayjs(show.startTime).format('dddd, M/D')}</p>
                 <Link className="text-white hover:text-black-500 underline text-sm item truncate ..." 
                 to={"/shows/" + show._id}>
                      See More 
