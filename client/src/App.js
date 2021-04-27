@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import CreatorPage from "./pages/CreatorPage";
 import EventPage from "./pages/EventPage";
 import Form from "./pages/Form";
-import Search from "./pages/Search";
+import SearchPage from "./pages/Search";
 import Main from "./pages/Main";
 
 
@@ -23,8 +23,8 @@ function App() {
       <Route exact path="/accountLogin" component={LoginPage} />
       {/* <Route exact path="/accountLogin" component= {} /> */} 
       <Route exact path="/creatorPage" component= {CreatorPage} />
-      <Route exact path="/form" component= {Form} />
-      <Route exact path="/search" component= {Search} />
+   {/*    <Route exact path="/form" component= {Form} /> */}
+      <Route exact path="/search" component= {SearchPage} />
       <Route exact path="/shows/:id" component= {EventPage}  /> 
       {/* component= {EventPage}
       in case there is a route that is not clearly defined, this route will direct the user back to  the home page */}

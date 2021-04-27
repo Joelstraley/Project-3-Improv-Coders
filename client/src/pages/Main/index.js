@@ -1,14 +1,26 @@
-import React, { Component } from 'react'
-import Navbar from "../../components/Navbar/index.js"
-import FormComponent from "../../components/Form"
-import { Link, Redirect } from "react-router-dom";
-import API from "../../utils/API.js";
+import React, { Component } from 'react';
+import NavBar from "../../components/Navbar";
+import Carousel from "../../components/Carousel";
+import CardContainer from '../../components/CardContainer'
+import CardsToday from '../../components/CardsToday';
+import CardsFuture from "../../components/CardsFuture";
+import AboutUs from "../../components/About-Us";
+import Footer from "../../components/Footer";
 
 
-export default function () {
-    return (
-        <div>
 
-        </div>
-    )
+
+export default class Main extends Component {
+    render() {
+        return (
+            <div>
+         <NavBar /> 
+                <Carousel arrows infinite /> 
+                     <CardsToday /> 
+                   <CardsFuture />
+                <AboutUs /> 
+            <Footer />
+            </div>
+        )
+    }
 }
