@@ -32,23 +32,23 @@ if (process.env.NODE_ENV === "production") {
 
 
 // mongoose.connect('mongodb://127.0.0.1:27017/passport-jwt', { useMongoClient: true });
-mongoose.connect('mongodb://127.0.0.1:27017/comedyshows', {
+/* mongoose.connect('mongodb://127.0.0.1:27017/comedyshows', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     // useFindAndModify: false
   });
-  // mongoose.set("useCreateIndex", true);
+  // mongoose.set("useCreateIndex", true); */
 mongoose.connection.on('error', error => console.log(error) );
 mongoose.Promise = global.Promise;
 // Proj database
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
-// {
-  //   useNewUrlParser: true,
-  //   useUnifiedTopology: true,
-  //   useCreateIndex: true,
-  //   useFindAndModify: false
-  // });
+ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/comedyshows", 
+ {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+ });
   
 require("./auth/passport.js")
 
