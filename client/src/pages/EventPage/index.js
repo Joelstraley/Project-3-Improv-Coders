@@ -5,9 +5,8 @@ import CardFlyer from "../../components/CardFlyer";
 import API from '../../utils/API';
 
 
-
 export default function index() {
-    const [event, setEvent ] = useState(null);
+/*     const [event, setEvent ] = useState(null);
     const {id}= useParams();
     
     useEffect(() =>{
@@ -16,15 +15,17 @@ export default function index() {
             console.log(res)
             setEvent(res.data);
         })
-    },[])
+    },[]) */
     
     return (
         <div>
             <Navbar />
-                {id} 
-                {event}
-                {/* <h1>{event.data.eventName}</h1> */}
-            {/* {event ? <CardFlyer show = {event.data} />: "" } */}
+            <CardFlyer />
+              {/*   {id} 
+                {event} 
+                <CardFlyer />
+              
+            {event ? <CardFlyer show = {event.data} />: "" }  */}
         </div>
     )
 }
