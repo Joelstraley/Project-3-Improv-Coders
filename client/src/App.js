@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route, } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect, } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import Register from "./pages/Register";
@@ -18,6 +18,7 @@ function App() {
 
       <Switch>
       {/* <Form /> */}
+      <Redirect exact from="/" to="/home" />
       <Route exact path="/" component={Main} /> 
       <Route exact path="/accountRegister" component={Register} /> 
       <Route exact path="/accountLogin" component={LoginPage} />

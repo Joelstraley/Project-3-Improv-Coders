@@ -1,7 +1,7 @@
 import axios from "axios";
-
+require("dotenv").config();
 // Local run
-const BASEURL = process.env.server_url || 'https://comedy-stream.herokuapp.com'
+const BASEURL = process.env.REACT_APP_API || 'https://comedy-stream.herokuapp.com'
 // const BASEURL = "";
 
 export default {
