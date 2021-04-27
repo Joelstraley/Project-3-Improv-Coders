@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from "../../components/Navbar";
-import Carousel from "../../components/Carousel";
+import ComedyCarousel from "../../components/Carousel";
 import CardContainer from '../../components/CardContainer'
 import CardsToday from '../../components/CardsToday';
 import CardsFuture from "../../components/CardsFuture";
@@ -15,12 +15,12 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-         <NavBar />
-                <Carousel arrows infinite /> 
-                     <CardsToday /> 
-                   <CardsFuture />
-                <AboutUs /> 
-            <Footer />
+                <NavBar />
+                <ComedyCarousel />
+                <CardsToday />
+                <CardsFuture />
+                <AboutUs />
+                <Footer />
             </div>
         )
     }
