@@ -1,7 +1,7 @@
 import axios from "axios";
 require("dotenv").config();
 // Local run
-const BASEURL = 'https://comedy-stream.herokuapp.com'
+const BASEURL =  process.env.REACT_APP_API || 'https://comedy-stream.herokuapp.com'
 // const BASEURL = ""
 
 /* process.env.REACT_APP_API || ; */
@@ -23,6 +23,7 @@ export default {
           console.log(token)
           localStorage.setItem("accessToken", token );
           localStorage.setItem("userEmail", resServer.data.email );
+          localStorage.setItem("userLogin", true );
           
           // console.log("Getting AccessToken", localStorage.getItem("accessToken"));
           resolve(resServer)
