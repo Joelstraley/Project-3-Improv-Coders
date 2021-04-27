@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Redirect} from "react-router-dom";
 import API from "../../utils/API";
 import CardFlyer from '../CardFlyer'
+import dayjs from 'dayjs';
 import axios from 'axios';
 import "./style.css";
 
@@ -59,6 +60,7 @@ export default class CardAll extends Component {
                 <h2 className="font-bold mb-2 text-2xl text-white item flex flex-wrap content-center">{show.eventName}</h2>
                 <p className="text-white mb-2 item truncate ...">{show.description}</p>
                 <p className="text-white mb-2 item truncate ...">${show.cost}</p>
+                <p className="text-white mb-2 item truncate ...">{dayjs(show.startTime).format('dddd, M/D')}</p>
                 <Link className="text-white hover:text-black-500 underline text-sm item truncate ..." 
                 to={"/shows/" + show._id}>
                      See More 
