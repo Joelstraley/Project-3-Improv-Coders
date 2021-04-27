@@ -1,7 +1,7 @@
 import React from 'react';
 const Gillian = './assets/gillian.jfif';
 const Kofi = './assets/kofi.jpg';
-const Joel = "./assets/Joel.jfif";
+const Joel = "./assets/joel.jfif";
 const linkedin = "./assets/linkedin.png"
 const resume = "./assets/resumeicon.png"
 const gitlogo = "./assets/gitlogo.png"
@@ -32,6 +32,7 @@ export default function AboutUs() {
                 </div>
 
                 <div className="imageJoel rounded-2xl border-4 border-solid border-gray-500 bg-blue-100 hover:bg-blue-100 p-5 hover:shadow-inner shadow-2xl"><img src={Joel} className="h-72 rounded-2xl mx-auto" alt="this is Joel's image" />
+
                     <p className="flex justify-center my-4 font-bold font-serif text-lg"> Joel Straley </p>
                     <div className="flex justify-center">
                         <img className="w-10 m-5 cursor-pointer hover:opacity-75" src={gitlogo} />
