@@ -9,7 +9,7 @@ export default class MemberPageComponent extends Component {
     render(props) {
         // if(this.state.user)
         return (
-            <div>
+            <div ClassName="bg-gradient-to-r from-blue-100 to-blue-300 p-10 border-t-1">
                 
                 <div className="grid grid-cols-5 gap-4" id="app" >
                 <h3 className="inline col-span-5 text-black-500 font-bold">Your Shows</h3>
