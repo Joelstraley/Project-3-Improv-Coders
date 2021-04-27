@@ -6,6 +6,7 @@ import CardsToday from '../../components/CardsToday';
 import CardsFuture from "../../components/CardsFuture";
 import AboutUs from "../../components/About-Us";
 import Footer from "../../components/Footer";
+import CardFlyer from '../../components/CardFlyer';
 
 
 
