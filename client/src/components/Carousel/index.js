@@ -16,7 +16,7 @@ export default function ComedyCarousel() {
             <div className="flex items-center object-contain h-96">
                 <Carousel
                     plugins={[
-                        'infinite',
+                        'arrows', 'infinite',
                         {
                             resolve: autoplayPlugin,
                             options: {
@@ -24,8 +24,7 @@ export default function ComedyCarousel() {
                             }
                         },
                     ]}
-                    animationSpeed={500}
-                >
+                    animationSpeed={500}>
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel1} />
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel2} />
                     <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel3} />
