@@ -20,18 +20,18 @@ export default function ComedyCarousel() {
                         {
                             resolve: autoplayPlugin,
                             options: {
-                                interval: 2000,
+                                interval: 3000,
                             }
                         },
                     ]}
                     animationSpeed={1000}>
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel1} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel2} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel3} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel4} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel5} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel6} />
-                    <img className="rounded-2xl m-2 shadow-2xl object-fill h-96" src={carousel7} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel1} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel2} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel3} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel4} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel5} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel6} />
+                    <img className="rounded-2xl shadow-2xl object-fill h-96" src={carousel7} />
                 </Carousel>
             </div>
         </div>

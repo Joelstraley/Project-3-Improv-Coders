@@ -9,7 +9,7 @@ const gitlogo = "./assets/gitlogo.png"
 export default function AboutUs() {
     return (
         <div className="bg-gradient-to-r from-blue-100 to-blue-300 p-10 border-t-1">
-            <h1 className="flex justify-center text-2xl font-bold md:text-4xl"> Meet the Improv Masters Team </h1>
+            <h1 className="flex justify-center text-2xl font-bold md:text-4xl text-indigo-900"> Meet the Improv Masters Team </h1>
 
             <div className="flex justify-between py-10 mx-15">
                 <div className="imageGillian rounded-2xl border-4 border-solid border-gray-500 bg-blue-100 hover:bg-indigo-100 p-5 hover:shadow-inner shadow-2xl"><img
