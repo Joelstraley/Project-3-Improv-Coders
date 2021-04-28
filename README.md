@@ -11,7 +11,7 @@ The main page shows a listing of Online Comedy Shows happening that day and anot
 * [Team](#Team)
 * [License](#License)
 
-Screenshot: 
+## Screenshot: 
 
 Main: 
 
