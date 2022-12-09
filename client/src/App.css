@@ -18,9 +18,8 @@
   font-size: large;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
